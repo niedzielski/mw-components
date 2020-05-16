@@ -20,9 +20,12 @@ npm i && npm run build
 these scripts.
 
 - `install` / `i`: install project dependencies. 
-- `build`: compile source inputs to bundle outputs.
+- `run build`: compile source inputs to bundle outputs under `dist/`.
 - `test` / `t`: build the project and execute all tests. Anything that can be validated by
-  automation before publishing runs through this command.
+	automation before publishing runs through this command.
+- `run docs`: generate all documentation under `docs/`.
+
+💡 Tip: add `-s` to omit verbose command echoing. E.g., `npm -s i` or `npm -s run docs`.
 
 The remaining undocumented scripts are utilities and not expressly supported workflows.
 
@@ -30,9 +33,70 @@ The remaining undocumented scripts are utilities and not expressly supported wor
 
 ## Design goals
 
-- Thoroughly typed. Accurate typing improves comprehension for tooling and programmers.
+- Fully typed. Accurate typing improves comprehension for tooling and programmers.
 - Performant and intelligently divided with minimal required dependencies.
 - Well tested and robust.
+- Thoroughly documented for development and usage.
+
+## Performance
+
+Bundle sizes and contents are reported under [docs/source-maps/] and tested with [bundlesize]. The
+rule of thumb is: identical data generally compresses well. It is recommended to evaluate
+performance using the minified gzipped outputs.
+
+For example, some CSS selectors are distant but have identical rules. This creates a large
+uncompressed CSS bundle when compiled. However, the compressed size may be negligible. Use the
+bundlesize tests to evaluate gzipped sizes before making optimizations that impede readability.
+
+[bundlesize]: https://github.com/siddharthkp/bundlesize
+[docs/source-maps/]: docs/source-maps/
+
+### Inspecting bundle contents
+
+See [docs/source-maps/]. For a second opinion, consider:
+
+```bash
+ls -1 dist/*.{js,css}|
+sort|
+while IFS= read filename; do
+	printf \
+		'%s: %sB / %sB\n' \
+		"$filename" \
+		"$(wc -c < "$filename"|numfmt --to=iec-i)" \
+		"$(gzip -c "$filename"|wc -c|numfmt --to=iec-i)"
+done
+printf \
+	'%s: %sB / %sB\n' \
+	"Total" \
+	"$(cat dist/*.{js,css}|wc -c|numfmt --to=iec-i)" \
+	"$(cat dist/*.{js,css}|gzip -c|wc -c|numfmt --to=iec-i)"
+```
+
+[docs/source-maps/]: docs/source-maps/
+
+### Configuration
+
+JavaScript and CSS build product bandwidth performances are tracked and tested with bundlesize. All
+configuration is versioned in [bundlesize.config.json]:
+
+- The values in the configuration are upper limits. As a convention, the number is rounded up to
+	the nearest tenth of a kibibyte. For example, a new file added of size `4.15 KB` would have its
+	initial limit set at `4.2 KB`. Whenever intentional changes causes its limit to increase or
+	decrease beyond a tenth of a kibibyte boundary, the size should be revised.
+- bundlesize internally uses Bytes utility which [only supports base-2 units]. Case-insensitive
+	decimal [JEDEC notation] is used in the config. This means 1.5 KB or 1.5 kb is 1536 bytes,
+	_not_ 1500 bytes.
+- ⚠️ Warning: values that cannot be parsed are _silently ignored_! When making changes, verify
+	that a comparison of two values is printed like `2.54KB < maxSize 2.6KB (gzip)`. If only one
+	number is shown (e.g., `2.54KB (gzip)`), the number has been entered incorrectly.
+- ⚠️ Warning: values entered must have a leading units position specified. Sub-one sizes like
+	`.5 KB` must be written with a leading zero like `0.5 KB` or they will not be pared.
+- The bundlesize thresholds specify minified gzipped maximums. Outputs are minified as part of
+	the build process and gzip is the a common HTTP compression.
+
+[JEDEC notation]: https://en.wikipedia.org/wiki/Template:Quantities_of_bytes    
+[only supports base-2 units]: https://github.com/visionmedia/bytes.js#bytesparsestringnumber-value-numbernull     
+[bundlesize.config.json]: bundlesize.config.json
 
 ## License (MIT)
 

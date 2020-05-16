@@ -18,12 +18,16 @@
   "main": "dist/mwc.js",
   "scripts": {
     "build": "tsc",
-    "test": "npm -s run build && npm -s run test:size",
-    "test:size": "bundlesize"
+    "test": "npm -s run build && npm -s run test:size && npm -s run docs",
+    "test:size": "bundlesize",
+    "docs": "npm -s run docs:source-map:min && npm -s run docs:source-map:minGzip",
+    "docs:source-map:min": "source-map-explorer --html docs/source-maps/min.html dist/index.js",
+    "docs:source-map:minGzip": "source-map-explorer --gzip --html docs/source-maps/minGzip.html dist/index.js"
   },
   "devDependencies": {
     "bundlesize": "0.18.0",
     "pre-commit": "1.2.2",
+    "source-map-explorer": "2.4.2",
     "typescript": "3.9.2"
   }
 }
