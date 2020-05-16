@@ -19,14 +19,19 @@ npm i && npm run build
 [Configure your NVM shell environment] (e.g., `nvm install $(<.nvmrc) && nvm use`) before executing
 these scripts.
 
-- `i`: install project dependencies. 
+- `install` / `i`: install project dependencies. 
 - `build`: compile source inputs to bundle outputs.
+- `test` / `t`: build the project and execute all tests. Anything that can be validated by
+  automation before publishing runs through this command.
+
+The remaining undocumented scripts are utilities and not expressly supported workflows.
 
 [Configure your NVM shell environment]:  http://nvm.sh#usage
 
 ## Design goals
 
 - Thoroughly typed. Accurate typing improves comprehension for tooling and programmers.
+- Performant and intelligently divided with minimal required dependencies.
 
 ## License (MIT)
 

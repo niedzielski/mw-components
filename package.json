@@ -17,9 +17,12 @@
   "license": "MIT",
   "main": "dist/mwc.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "npm -s run build && npm -s run test:size",
+    "test:size": "bundlesize"
   },
   "devDependencies": {
+    "bundlesize": "0.18.0",
     "typescript": "3.9.2"
   }
 }
