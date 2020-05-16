@@ -2,6 +2,28 @@
 
 Vue.js user interface components for search.
 
+## Table of contents
+
+<!--
+	Markdown Preview Enhanced is used to automatically generate the table of contents. You don't
+	have to use it but please leave these directives for those who choose to. It helps keeps the
+	TOC in sync.
+-->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
+<!-- code_chunk_output -->
+
+- [Table of contents](#table-of-contents)
+- [Development](#development)
+  - [Quick start](#quick-start)
+  - [NPM scripts](#npm-scripts)
+- [Design goals](#design-goals)
+- [Performance](#performance)
+  - [Inspecting bundle contents](#inspecting-bundle-contents)
+  - [Configuration](#configuration)
+- [License (MIT)](#license-mit)
+
+<!-- /code_chunk_output -->
+
 ## Development
 
 ### Quick start
