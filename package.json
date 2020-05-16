@@ -14,5 +14,12 @@
   "homepage": "https://github.com/niedzielski/mw-components",
   "repository": "github:niedzielski/mw-components",
   "bugs": "https://phabricator.wikimedia.org/tag/vue.js",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "dist/mwc.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "3.9.2"
+  }
 }

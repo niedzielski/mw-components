@@ -20,8 +20,13 @@ npm i && npm run build
 these scripts.
 
 - `i`: install project dependencies. 
+- `build`: compile source inputs to bundle outputs.
 
 [Configure your NVM shell environment]:  http://nvm.sh#usage
+
+## Design goals
+
+- Thoroughly typed. Accurate typing improves comprehension for tooling and programmers.
 
 ## License (MIT)
 

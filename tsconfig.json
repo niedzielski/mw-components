@@ -1,0 +1,25 @@
+{
+	"compilerOptions": {
+		"resolveJsonModule": true,
+		"allowJs": true,
+
+		// Recommended Vue configuration to enable tree shaking. See
+		// https://vuejs.org/v2/guide/typescript.html.
+		"module": "es2015",
+		"moduleResolution": "node",
+
+		"checkJs": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"forceConsistentCasingInFileNames": true,
+
+		"pretty": true,
+		"incremental": true,
+		"target": "es5",
+		"sourceMap": true,
+		"declaration": true,
+		"outDir": "dist"
+	}
+}
