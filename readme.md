@@ -2,6 +2,27 @@
 
 Vue.js user interface components for search.
 
+## Development
+
+### Quick start
+
+```bash
+npm i && npm run build
+```
+
+[NVM] is used to specify Node.js version but any recent version usually works.
+
+[NVM]:  http://nvm.sh
+
+### NPM scripts
+
+[Configure your NVM shell environment] (e.g., `nvm install $(<.nvmrc) && nvm use`) before executing
+these scripts.
+
+- `i`: install project dependencies. 
+
+[Configure your NVM shell environment]:  http://nvm.sh#usage
+
 ## License (MIT)
 
 [The MIT License]
