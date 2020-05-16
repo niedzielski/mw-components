@@ -32,6 +32,7 @@ The remaining undocumented scripts are utilities and not expressly supported wor
 
 - Thoroughly typed. Accurate typing improves comprehension for tooling and programmers.
 - Performant and intelligently divided with minimal required dependencies.
+- Well tested and robust.
 
 ## License (MIT)
 

@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "bundlesize": "0.18.0",
+    "pre-commit": "1.2.2",
     "typescript": "3.9.2"
   }
 }
