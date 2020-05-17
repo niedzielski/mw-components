@@ -27,10 +27,14 @@
     "postversion": "git push --follow-tags origin HEAD && npm publish",
     "prepublishOnly": "npm -s t"
   },
+  "peerDependencies": {
+    "vue": "^2.6.11"
+  },
   "devDependencies": {
     "bundlesize": "0.18.0",
     "pre-commit": "1.2.2",
     "source-map-explorer": "2.4.2",
-    "typescript": "3.9.2"
+    "typescript": "3.9.2",
+    "vue": "2.6.11"
   }
 }

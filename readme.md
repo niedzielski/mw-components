@@ -19,6 +19,7 @@ Vue.js user interface components for search.
 - [Development](#development)
   - [Quick start](#quick-start)
   - [NPM scripts](#npm-scripts)
+  - [Conventions](#conventions)
   - [Versioning](#versioning)
 - [Design goals](#design-goals)
 - [Performance](#performance)
@@ -30,10 +31,10 @@ Vue.js user interface components for search.
 
 ## Usage
 
-Install the package:
+Install the package and Vue.js:
 
 ```bash
-npm i -D @wikimedia/mw-components
+npm i -D vue@2 @wikimedia/mw-components
 ```
 
 Import the appropriate build:
@@ -85,6 +86,16 @@ these scripts.
 The remaining undocumented scripts are utilities and not expressly supported workflows.
 
 [Configure your NVM shell environment]:  http://nvm.sh#usage
+
+### Conventions
+
+- The [Vue.js Style Guide] is adhered to where possible.
+- PascalCase multi-word component names are used per the Vue.js Style Guide. Since every component
+  is prefixed with `Mw`, all components are multi-word just by keeping that pattern. E.g.:
+  - ✓ Use `MwFoo` with a lowercase "w".
+  - ✗ Do _not_ use `MWFoo` with a capital "W". This breaks kebab-cased HTML in templates.
+
+[Vue.js Style Guide]: https://vuejs.org/v2/style-guide
 
 ### Versioning
 

@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		// Allow JSON and JavaScript files.
 		"resolveJsonModule": true,
 		"allowJs": true,
 
@@ -8,6 +9,11 @@
 		"module": "es2015",
 		"moduleResolution": "node",
 
+		// Map @/ to src/.
+		"baseUrl": ".",
+		"paths": { "@/*": [ "src/*" ] },
+
+		// Maximize type checking.
 		"checkJs": true,
 		"strict": true,
 		"noUnusedLocals": true,
@@ -19,7 +25,9 @@
 		"incremental": true,
 		"target": "es5",
 		"sourceMap": true,
-		"declaration": true,
-		"outDir": "dist"
+		"outDir": "dist",
+
+		// Emit type definitions (.d.ts) for clients to test their integration typing.
+		"declaration": true
 	}
 }
