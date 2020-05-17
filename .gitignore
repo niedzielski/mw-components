@@ -6,4 +6,6 @@
 
 /.eslintcache
 
+# Ignore generated documentation.
+/docs/ui/
 /docs/source-maps/

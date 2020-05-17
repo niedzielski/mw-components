@@ -9,6 +9,9 @@
 		"module": "es2015",
 		"moduleResolution": "node",
 
+		// Enable wildcard imports.
+		"allowSyntheticDefaultImports": true,
+
 		// Map @/ to src/.
 		"baseUrl": ".",
 		"paths": { "@/*": [ "src/*" ] },
@@ -31,5 +34,7 @@
 		// current configuration:
 		// https://github.com/TypeStrong/fork-ts-checker-webpack-plugin/issues/49.
 		"declaration": true
-	}
+	},
+	// For Storybook.
+	"exclude": [ "node_modules", "dist", "docs" ]
 }

@@ -31,6 +31,8 @@ Vue.js user interface components for MediaWiki's Vector skin.
       - [ResourceLoader module mapping and chunks](#resourceloader-module-mapping-and-chunks)
       - [Extending styles without breaking compatibility](#extending-styles-without-breaking-compatibility)
       - [Migration and breaking compatibility](#migration-and-breaking-compatibility)
+  - [Storybook](#storybook)
+    - [With Vue.js devtools](#with-vuejs-devtools)
   - [Versioning](#versioning)
 - [Design goals](#design-goals)
 - [Performance](#performance)
@@ -78,7 +80,7 @@ See the [changelog].
 ### Quick start
 
 ```bash
-npm i && npm run build
+npm i && npm start
 ```
 
 [NVM] is used to specify Node.js version but any recent version usually works.
@@ -91,6 +93,7 @@ npm i && npm run build
 these scripts.
 
 - `install` / `i`: install project dependencies. 
+- `start`: launch Storybook development workflow.
 - `run build`: compile source inputs to bundle outputs under `dist/`.
 - `test` / `t`: build the project and execute all tests. Anything that can be validated
 	automatically before publishing runs through this command.
@@ -229,6 +232,20 @@ Vector, an old skin, into "legacy" and "latest" modes. The approach impedes read
 library a little clumsy in places, and all that hinders reusability but seems the most practical
 compromise for all design goals.
 
+### Storybook
+
+#### With Vue.js devtools
+
+[Storybook is incompatible with Vue.js devtools]. There are at least a couple workarounds:
+
+- In Firefox, open the story you wish to inspect. Right-click anywhere in the story and select
+	`This Frame -> Open Frame in New Tab`. devtools should now work correctly in the new tab.
+- Launch the standalone Vue.js devtools app via `npx -p @vue/devtools vue-devtools` and add
+	`<script src="//localhost:8098"></script>` to .storybook/preview-head.html. Now run Storybook
+	`npm -s start` and devtools should connect.
+
+[Storybook is incompatible with Vue.js devtools]: https://github.com/storybookjs/storybook/issues/1708
+
 ### Versioning
 
 To publish a new release:
@@ -252,10 +269,12 @@ $ npm version minor
 
 - Deploy to all test wikis before August 31, 2020: frwiktionary, hewiki, ptwikiversity, frwiki,
 	euwiki, fawiki.
-- Modern developer workflow and user experiences.
+- Modern, fast, iterative developer / designer workflows.
+- Delightful user experiences shareable as an NPM package and reusable everywhere with and without
+	MediaWiki.
 - Fully typed. Accurate typing improves comprehension for tooling and programmers.
 - Performant and intelligently divided with minimal required dependencies.
-- Reusable and shareable as an NPM package.
+- Outstanding internationalization and accessibility support.
 - Well tested and robust.
 - Thoroughly documented for development and usage.
 - [Semantically versioned].

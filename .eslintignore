@@ -7,3 +7,9 @@
 # https://github.com/azeemba/eslint-plugin-json/issues/17.
 # !/.eslintrc.json
 /tsconfig.json
+
+# Lint hidden files and folders.
+!/.storybook/
+
+# Ignore generated documentation.
+/docs/ui/
