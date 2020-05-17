@@ -15,6 +15,7 @@ Vue.js user interface components for search.
 - [Table of contents](#table-of-contents)
 - [Usage](#usage)
   - [Different builds](#different-builds)
+  - [Version history](#version-history)
 - [Development](#development)
   - [Quick start](#quick-start)
   - [NPM scripts](#npm-scripts)
@@ -47,6 +48,12 @@ The following chunks are available:
 - index.js: the complete library and default export.
 
 Each entry is side-effect free.
+
+### Version history
+
+See the [changelog].
+
+[changelog]: changelog.md
 
 ## Development
 
