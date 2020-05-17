@@ -1,6 +1,6 @@
 # 🧩 @wikimedia/mw-components
 
-Vue.js user interface components for MediaWiki's Vector skin.
+Discardable Vue.js user interface components prototype for MediaWiki's Vector skin.
 
 **View the components online:**
 
@@ -54,7 +54,7 @@ Learn more about the [different builds](#different-builds) available below.
     - [With Vue.js devtools](#with-vuejs-devtools)
   - [IDE support](#ide-support)
     - [Visual Studio Code](#visual-studio-code)
-      - [Recomended extensions](#recomended-extensions)
+      - [Recommended extensions](#recommended-extensions)
   - [Versioning](#versioning)
 - [Design goals](#design-goals)
 - [Performance](#performance)
