@@ -52,6 +52,9 @@ Learn more about the [different builds](#different-builds) available below.
       - [Migration and breaking compatibility](#migration-and-breaking-compatibility)
   - [Storybook](#storybook)
     - [With Vue.js devtools](#with-vuejs-devtools)
+  - [IDE support](#ide-support)
+    - [Visual Studio Code](#visual-studio-code)
+      - [Recomended extensions](#recomended-extensions)
   - [Versioning](#versioning)
 - [Design goals](#design-goals)
 - [Performance](#performance)
@@ -287,6 +290,18 @@ compromise for all design goals.
 	`npm -s start` and devtools should connect.
 
 [Storybook is incompatible with Vue.js devtools]: https://github.com/storybookjs/storybook/issues/1708
+
+### IDE support
+
+#### Visual Studio Code
+
+##### Recommended extensions
+
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [Markdown Preview Enhanced](https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced)
+- [stylelint](https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint)
+- [Vetur](https://marketplace.visualstudio.com/items?itemName=octref.vetur)
 
 ### Versioning
 
