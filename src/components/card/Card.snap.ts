@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card.vue renders correctly 1`] = `
+exports[`Card renders correctly 1`] = `
 <div
   class="mw-ui-card"
 >

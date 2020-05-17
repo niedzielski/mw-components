@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button.vue matches the snapshot with an HTML label 1`] = `
+exports[`Button matches the snapshot with an HTML label 1`] = `
 <button
   class="mw-ui-button mw-ui-big mw-ui-progressive"
 >
@@ -23,7 +23,7 @@ exports[`Button.vue matches the snapshot with an HTML label 1`] = `
 </button>
 `;
 
-exports[`Button.vue matches the snapshot with an destructive type icon button 1`] = `
+exports[`Button matches the snapshot with an destructive type icon button 1`] = `
 <button
   class="mw-ui-button mw-ui-destructive mw-ui-button-icon"
 >

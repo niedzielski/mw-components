@@ -2,7 +2,7 @@ import { shallowMount } from '@vue/test-utils';
 import MwButton from './Button.vue';
 import { mwIconTrash, mwIconAdd } from '../icon/icons';
 
-describe( 'Button.vue', () => {
+describe( 'Button', () => {
 	it( 'renders props.id when passed', () => {
 		const id = 'buttonId';
 		const buttonClass = 'mw-ui-button';
