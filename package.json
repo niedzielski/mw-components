@@ -22,7 +22,10 @@
     "test:size": "bundlesize",
     "docs": "npm -s run docs:source-map:min && npm -s run docs:source-map:minGzip",
     "docs:source-map:min": "source-map-explorer --html docs/source-maps/min.html dist/index.js",
-    "docs:source-map:minGzip": "source-map-explorer --gzip --html docs/source-maps/minGzip.html dist/index.js"
+    "docs:source-map:minGzip": "source-map-explorer --gzip --html docs/source-maps/minGzip.html dist/index.js",
+    "preversion": "[ -z \"$(git status -z)\" ]",
+    "postversion": "git push --follow-tags origin HEAD && npm publish",
+    "prepublishOnly": "npm -s t"
   },
   "devDependencies": {
     "bundlesize": "0.18.0",

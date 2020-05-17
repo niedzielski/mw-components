@@ -19,6 +19,7 @@ Vue.js user interface components for search.
 - [Development](#development)
   - [Quick start](#quick-start)
   - [NPM scripts](#npm-scripts)
+  - [Versioning](#versioning)
 - [Design goals](#design-goals)
 - [Performance](#performance)
   - [Inspecting bundle contents](#inspecting-bundle-contents)
@@ -77,6 +78,7 @@ these scripts.
 - `test` / `t`: build the project and execute all tests. Anything that can be validated by
 	automation before publishing runs through this command.
 - `run docs`: generate all documentation under `docs/`.
+- `version`: see [Versioning](#versioning).
 
 💡 Tip: add `-s` to omit verbose command echoing. E.g., `npm -s i` or `npm -s run docs`.
 
@@ -84,12 +86,34 @@ The remaining undocumented scripts are utilities and not expressly supported wor
 
 [Configure your NVM shell environment]:  http://nvm.sh#usage
 
+### Versioning
+
+To publish a new release:
+
+1. Update the [changelog](changelog.md).
+1. Execute `npm version <patch|minor|major>`.
+
+The NPM scripts are configured to help prevent unstaged changes from being published and that tests
+pass prior.
+
+<details markdown>
+<summary>Example…</summary>
+
+```
+$ vim changlog.md # note a new feature and a couple bug fixes
+$ npm version minor
+```
+</details>
+
 ## Design goals
 
 - Fully typed. Accurate typing improves comprehension for tooling and programmers.
 - Performant and intelligently divided with minimal required dependencies.
 - Well tested and robust.
 - Thoroughly documented for development and usage.
+- [Semantically versioned].
+
+[Semantically versioned]: https://semver.org/
 
 ## Performance
 
