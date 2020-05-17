@@ -13,6 +13,7 @@ const webpack = require( 'webpack' );
 // readme.md#different-builds for details.
 const Chunk = {
 	Mwc: 'mwc',
+	Common: 'mwc-common',
 	Primitives: 'mwc-primitives',
 	Search: 'mwc-search'
 };
@@ -115,6 +116,12 @@ module.exports = ( _env, argv ) => ( {
 	devtool: argv.mode === 'production' ? 'source-map' : 'cheap-module-eval-source-map',
 
 	optimization: {
+		runtimeChunk: {
+			name( chunk ) {
+				// Extract the runtime for all chunks except the default Mwc.
+				return chunk.options.name === Chunk.Mwc ? Chunk.Mwc : Chunk.Common;
+			}
+		},
 		// Enable CSS minification. Unfortunately, this overrides the default JavaScript
 		// minification so it must be re-enabled with the TerserJSPlugin. The default processor is
 		// cssnano which uses postcss.

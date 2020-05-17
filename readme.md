@@ -8,6 +8,8 @@ Vue.js user interface components for MediaWiki's Vector skin.
 - Chunk source map divisions:
 	- MWC: [min](https://mw-components.netlify.app/sourceMaps/mwcMin.html) /
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html)
+	- Common: [min](https://mw-components.netlify.app/sourceMaps/commonMin.html) /
+	  [min+gzip](https://mw-components.netlify.app/sourceMaps/commonMinGzip.html)
 	- Primitives: [min](https://mw-components.netlify.app/sourceMaps/primitivesMin.html) /
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/primitivesMinGzip.html)
 	- Search: [min](https://mw-components.netlify.app/sourceMaps/searchMin.html) /
@@ -78,11 +80,15 @@ import mwc from '@wikimedia/mw-components';
 
 The following chunks are available:
 
-- mwc.js/css: the complete library and default export.
-- mwc-primitives.js/css: MwButton, MwInput, and other primitives needed to build any user
-	interface.
-- mwc-search.js/css: An optimized bundle for MwTypeaheadSearchAutocomplete.
-- mediawiki.ui.button.js/css: MediaWiki styles. Use these in non-MediaWiki contexts only.
+- **mwc**.js/css: the complete library and default export. No other chunks required.
+- **mwc-common**.js/css: common denominator chunk for all other chunks except mwc. Code that can
+	be shared is coalesced herein. This chunk includes the Webpack runtime or bootloader. This chunk
+	may change often.
+- **mwc-primitives**.js/css: MwButton, MwInput, and other primitives needed to build any user
+	interface. This chunk requires mwc-common.
+- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearchAutocomplete. This chunk requires
+	mwc-common.
+- **mediawiki.ui.button**.js/css: MediaWiki styles. Use these in non-MediaWiki contexts only.
 
 Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require an Vue.js
 runtime.
