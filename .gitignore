@@ -8,4 +8,4 @@
 
 # Ignore generated documentation.
 /docs/ui/
-/docs/source-maps/
+/docs/sourceMaps/

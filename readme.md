@@ -2,7 +2,14 @@
 
 Vue.js user interface components for MediaWiki's Vector skin.
 
-[View the components Storybook online](https://mw-components.netlify.app/ui).
+View online:
+
+- [Storybook user interface guide](https://mw-components.netlify.app/ui)
+- Chunk source map divisions:
+	- MWC: [min](https://mw-components.netlify.app/sourceMaps/mwcMin.html) /
+	  [min+gzip](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html)
+	- Primitives: [min](https://mw-components.netlify.app/sourceMaps/primitivesMin.html) /
+	  [min+gzip](https://mw-components.netlify.app/sourceMaps/primitivesMinGzip.html)
 
 ## Table of contents
 
@@ -294,7 +301,7 @@ $ npm version minor
 
 ## Performance
 
-Bundle sizes and contents are reported under [docs/source-maps/] and tested with [bundlesize]. The
+Bundle sizes and contents are reported under [docs/sourceMaps/] and tested with [bundlesize]. The
 rule of thumb is: identical data generally compresses well. It is recommended to evaluate
 performance using the minified gzipped outputs.
 
@@ -303,11 +310,11 @@ uncompressed CSS bundle when compiled. However, the compressed size may be negli
 bundlesize tests to evaluate gzipped sizes before making optimizations that impede readability.
 
 [bundlesize]: https://github.com/siddharthkp/bundlesize
-[docs/source-maps/]: docs/source-maps/
+[docs/sourceMaps/]: docs/sourceMaps/
 
 ### Inspecting bundle contents
 
-See [docs/source-maps/]. For a second opinion, consider:
+See [docs/sourceMaps/]. For a second opinion, consider:
 
 ```bash
 ls -1 dist/*.{js,css}|
@@ -326,7 +333,7 @@ printf \
 	"$(cat dist/*.{js,css}|gzip -c|wc -c|numfmt --to=iec-i)"
 ```
 
-[docs/source-maps/]: docs/source-maps/
+[docs/sourceMaps/]: docs/sourceMaps/
 
 ### Configuration
 
