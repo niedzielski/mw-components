@@ -2,9 +2,9 @@
 
 Vue.js user interface components for MediaWiki's Vector skin.
 
-#### View the components online
+#### View the components online {ignore=true}
 
-- [Storybook user interface guide](https://mw-components.netlify.app/ui)
+- [Storybook user interface catalog](https://mw-components.netlify.app/ui)
 - Chunk source map divisions:
 	- MWC: [min](https://mw-components.netlify.app/sourceMaps/mwcMin.html) /
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html)
@@ -24,7 +24,6 @@ Learn more about the [different builds](#different-builds) available below.
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
-    - [View the components online](#view-the-components-online)
 - [Table of contents](#table-of-contents)
 - [Usage](#usage)
   - [Different builds](#different-builds)
