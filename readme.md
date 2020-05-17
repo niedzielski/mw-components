@@ -163,6 +163,7 @@ this project will depend on that package instead of file copies.
 The styles correspond to the following ResourceLoader modules:
 
 | ResourceLoader module | mw-components files |
+| --------------------- | :------------------ |
 | mediawiki.ui.button   | mediawiki/mediawiki.ui/components/buttons.less |
 
 These modules are shipped on every Vector pageview?
