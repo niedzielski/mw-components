@@ -58,19 +58,19 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less';
 
 .mw-ui-icon {
 	align-items: center;
 	display: inline-flex;
-	font-feature-settings: "liga";
+	font-feature-settings: 'liga';
 	font-size: @iconSize;
 	justify-content: center;
 	letter-spacing: normal;
 	line-height: 1;
 	text-indent: 0;
-	.transition(~"0.3s cubic-bezier(0.25, 0.8, 0.5, 1), visibility 0s");
+	.transition(~'0.3s cubic-bezier(0.25, 0.8, 0.5, 1), visibility 0s');
 	vertical-align: middle;
 	user-select: none;
 }

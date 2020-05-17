@@ -3,11 +3,9 @@
 </template>
 
 <style lang="less">
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
 
 .mw-ui-divider {
 	border: 1px solid @colorGray12;
-	margin: 0 !important;
-	padding: 0 !important;
 }
 </style>

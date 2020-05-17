@@ -95,8 +95,8 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less';
 
 .mw-ui-dialog {
 	display: flex;
@@ -114,8 +114,8 @@ export default Vue.extend( {
 			top: 0;
 			left: 0;
 			max-width: 100vw;
-			min-width: calc(100vw - 2px);
-			min-height: calc(100vh - 2px);
+			min-width: calc( 100vw - 2px );
+			min-height: calc( 100vh - 2px );
 			max-height: 100vh;
 		}
 	}
@@ -129,21 +129,22 @@ export default Vue.extend( {
 		background-color: @background-color-base;
 	}
 
+	// stylelint-disable-next-line no-descending-specificity
 	.mw-ui-dialog__shell {
 		flex-direction: column;
 		background-color: @background-color-base;
 		border: @border-base;
 		border-radius: @border-radius-base;
 		position: relative;
-		max-width: calc(100vw - 100px);
+		max-width: calc( 100vw - 100px );
 		min-width: 300px;
-		max-height: calc(100vh - 100px);
+		max-height: calc( 100vh - 100px );
 		min-height: 200px;
 		.box-shadow(0 2px 2px 0 rgba(0, 0, 0, 0.25));
 	}
 
 	.mw-ui-dialog__header {
-		& > .mw-ui-dialog__header-title:not(:empty) {
+		& > .mw-ui-dialog__header-title:not( :empty ) {
 			max-height: 2em;
 			max-width: 100%;
 			font-weight: bold;
@@ -159,7 +160,7 @@ export default Vue.extend( {
 		overflow: auto;
 	}
 
-	.mw-ui-dialog__footer:not(:empty) {
+	.mw-ui-dialog__footer:not( :empty ) {
 		border-top: 1px solid @colorGray12;
 		max-height: 2em;
 	}
@@ -176,32 +177,32 @@ export default Vue.extend( {
 	&slide-down-leave-active {
 		transition-duration: 0.5s;
 		transition-property: height, opacity, transform;
-		transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+		transition-timing-function: cubic-bezier( 0.55, 0, 0.1, 1 );
 		overflow: hidden;
 	}
 
 	&slide-left-enter,
 	&slide-left-leave-active {
 		opacity: 0;
-		transform: translate(100vw, 0);
+		transform: translate( 100vw, 0 );
 	}
 
 	&slide-right-enter,
 	&slide-right-leave-active {
 		opacity: 0;
-		transform: translate(-100vw, 0);
+		transform: translate( -100vw, 0 );
 	}
 
 	&slide-up-enter,
 	&slide-up-leave-active {
 		opacity: 0;
-		transform: translate(0, 100vw);
+		transform: translate( 0, 100vw );
 	}
 
 	&slide-down-leave-active,
 	&slide-down-enter {
 		opacity: 0;
-		transform: translate(0, -100vw);
+		transform: translate( 0, -100vw );
 	}
 }
 </style>

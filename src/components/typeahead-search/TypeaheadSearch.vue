@@ -12,6 +12,6 @@ export default Vue.extend( {
 
 <style lang="less">
 .mw-ui-typeahead-search {
-	background: red;
+	background: #f00;
 }
 </style>

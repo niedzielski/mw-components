@@ -9,10 +9,13 @@
 /tsconfig.json
 
 # Lint hidden files and folders.
+!/.jest/
 !/.storybook/
+!/.stylelintrc.json
 
 # Ignore generated documentation.
 /docs/ui/
+/docs/sourceMaps/
 
 # Ignore Jest snapshots.
 *.snap.ts

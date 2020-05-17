@@ -97,7 +97,7 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
 
 // Neutral button styling
 //
@@ -112,6 +112,7 @@ export default Vue.extend( {
 	}
 
 	// Do not break words in buttons.
+	// stylelint-disable-next-line no-descending-specificity
 	.mw-ui-button__label {
 		white-space: nowrap;
 		overflow: hidden;

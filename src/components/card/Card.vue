@@ -23,8 +23,8 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less';
 
 .mw-ui-card {
 	background-color: @background-color-base;
@@ -33,6 +33,7 @@ export default Vue.extend( {
 	border-radius: @border-radius-base;
 	padding: 8px;
 	.box-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
+
 	.mw-ui-card__title {
 		height: 2em;
 		color: @colorGray5;

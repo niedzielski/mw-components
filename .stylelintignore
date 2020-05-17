@@ -1,0 +1,13 @@
+/*.json
+
+/dist/
+
+/docs/ui/
+/docs/sourceMaps/
+/docs/minGzipBundleSize.txt
+
+# MediaWiki styles endeavor to be verbatim file copies.
+/src/styles/mediawiki/
+
+# Ignore Jest snapshots.
+*.snap.ts

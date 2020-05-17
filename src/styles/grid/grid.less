@@ -8,26 +8,26 @@
 
 // Break points
 @breakpoints: {
-	xs: ~"only screen and (min-width: 300px)";
-	sm: ~"only screen and (min-width: 600px)";
-	md: ~"only screen and (min-width: 960px)";
-	lg: ~"only screen and (min-width: 1264px)";
-	xl: ~"only screen and (min-width: 1904px)";
+	xs: ~'only screen and (min-width: 300px)'; // stylelint-disable-line property-no-unknown
+	sm: ~'only screen and (min-width: 600px)'; // stylelint-disable-line property-no-unknown
+	md: ~'only screen and (min-width: 960px)'; // stylelint-disable-line property-no-unknown
+	lg: ~'only screen and (min-width: 1264px)'; // stylelint-disable-line property-no-unknown
+	xl: ~'only screen and (min-width: 1904px)'; // stylelint-disable-line property-no-unknown
 }
 
 // Viewports. See .storybook/preview.js.
 @viewports: {
-	xs: ~"only screen and (max-width: 599px)";
-	sm: ~"only screen and (min-width: 600px) and (max-width: 959px)";
-	md: ~"only screen and (min-width: 960px) and (max-width: 1263px)";
-	lg: ~"only screen and (min-width: 1264px) and (max-width: 1903px)";
-	xl: ~"only screen and (min-width: 1904px)";
+	xs: ~'only screen and (max-width: 599px)'; // stylelint-disable-line property-no-unknown
+	sm: ~'only screen and (min-width: 600px) and (max-width: 959px)'; // stylelint-disable-line property-no-unknown
+	md: ~'only screen and (min-width: 960px) and (max-width: 1263px)'; // stylelint-disable-line property-no-unknown
+	lg: ~'only screen and (min-width: 1264px) and (max-width: 1903px)'; // stylelint-disable-line property-no-unknown
+	xl: ~'only screen and (min-width: 1904px)'; // stylelint-disable-line property-no-unknown
 }
 
 // Generate LTR and RTL style for a given property and value. Replaces 'left' by 'right' and vice
 // versa. The compressed size difference is negligible.
 .bidi(@property, @value) {
-	[dir="ltr"] & {
+	[ dir='ltr' ] & {
 		@{property}: @value;
 	}
 	@flipped-property-l2r: replace( @property, 'left', 'right');
@@ -35,7 +35,7 @@
 	@flipped-value-l2r: replace(@value, 'left', 'right');
 	@flipped-value: if( @flipped-value-l2r=@value,replace( @value, 'right', 'left'), @flipped-value-l2r );
 
-	[dir="rtl"] & {
+	[ dir='rtl' ] & {
 		@{flipped-property}: @flipped-value;
 	}
 }
@@ -46,12 +46,12 @@
 	@mediaKey: if(@media='', ~'', ~'@{media}-');
 
 	.col-@{mediaKey}@{counter} {
-		flex-basis: ~"@{width}%";
-		max-width: ~"@{width}%";
+		flex-basis: ~'@{width}%';
+		max-width: ~'@{width}%';
 	}
 
 	.col-offset-@{mediaKey}@{counter} {
-		.bidi(~' margin-left', ~"@{width}%");
+		.bidi(~' margin-left', ~'@{width}%');
 	}
 
 	.generateResponsiveCols((@counter - 1), @media);
@@ -63,35 +63,35 @@
 	@mediaKey: if(@media='', ~'', ~'@{media}-');
 
 	.ps-@{mediaKey}@{counter} {
-		.bidi(~'padding-left', ~"@{width}px");
+		.bidi(~'padding-left', ~'@{width}px');
 	}
 	.ms-@{mediaKey}@{counter} {
-		.bidi(~"margin-left", ~"@{width}px");
+		.bidi(~'margin-left', ~'@{width}px');
 	}
 	.pe-@{mediaKey}@{counter} {
-		.bidi(~'padding-right', ~"@{width}px");
+		.bidi(~'padding-right', ~'@{width}px');
 	}
 	.me-@{mediaKey}@{counter} {
-		.bidi(~"margin-right", ~"@{width}px");
+		.bidi(~'margin-right', ~'@{width}px');
 	}
 
 	.pt-@{mediaKey}@{counter} {
-		padding-top: ~"@{width}px";
+		padding-top: ~'@{width}px';
 	}
 	.mt-@{mediaKey}@{counter} {
-		margin-top: ~"@{width}px";
+		margin-top: ~'@{width}px';
 	}
 	.pb-@{mediaKey}@{counter} {
-		padding-bottom: ~"@{width}px";
+		padding-bottom: ~'@{width}px';
 	}
 	.mb-@{mediaKey}@{counter} {
-		margin-bottom: ~"@{width}px";
+		margin-bottom: ~'@{width}px';
 	}
 	.pa-@{mediaKey}@{counter} {
-		padding: ~"@{width}px";
+		padding: ~'@{width}px';
 	}
 	.ma-@{mediaKey}@{counter} {
-		margin: ~"@{width}px";
+		margin: ~'@{width}px';
 	}
 	.generateSpacing(@counter - 1, @media);
 }
@@ -113,7 +113,7 @@
 			flex-wrap: nowrap;
 		}
 
-		[class^="col-"] {
+		[ class^='col-' ] {
 			box-sizing: border-box;
 			flex-grow: 0;
 			flex-shrink: 0;
@@ -172,8 +172,8 @@
 		}
 	}
 
-	[class*="items-"],
-	[class*="justify-"] {
+	[ class*='items-' ],
+	[ class*='justify-' ] {
 		display: flex;
 	}
 

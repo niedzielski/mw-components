@@ -5,6 +5,7 @@
 !/dist/.eslintrc.js
 
 /.eslintcache
+/.stylelintcache
 
 # Ignore generated documentation.
 /docs/ui/

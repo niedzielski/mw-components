@@ -132,8 +132,8 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less';
 
 .mw-ui-input {
 	display: inline-block;
@@ -145,27 +145,31 @@ export default Vue.extend( {
 	border-radius: @border-radius-base;
 	// necessary for smooth transition
 	box-shadow: inset 0 0 0 0.1em #fff;
+
 	&:hover {
 		border-color: @colorGray7;
 	}
+
 	.mw-ui-input__content {
 		padding: 0;
 		margin: 4px;
 	}
+
 	.mw-ui-input__wrapper {
 		position: relative;
 		flex: auto 1 1;
 	}
-	.mw-ui-input__input {
-		outline: none;
-		border: none;
-		padding: 6px 8px;
 
+	.mw-ui-input__input {
+		outline: 0;
+		border: 0;
+		padding: 6px 8px;
 		font-family: inherit;
 		font-size: inherit;
 		line-height: 1.28571429em;
 		vertical-align: middle;
-		&:not(textarea) {
+
+		&:not( textarea ) {
 			height: 32px;
 		}
 		// Normalize & style placeholder text, see T139034
@@ -173,6 +177,7 @@ export default Vue.extend( {
 			color: @colorGray7;
 			opacity: 1;
 		}
+
 		&:-moz-focus-inner {
 			border: 0;
 		}
@@ -184,8 +189,8 @@ export default Vue.extend( {
 		}
 
 		// `:not()` is used exclusively for `transition`s as both are not supported by IE < 9.
-		&:not(:disabled) {
-			.transition(~"color 100ms, border-color 100ms, box-shadow 100ms");
+		&:not( :disabled ) {
+			.transition(~'color 100ms, border-color 100ms, box-shadow 100ms');
 		}
 
 		&:disabled {
@@ -194,7 +199,7 @@ export default Vue.extend( {
 		}
 
 		// Normalize styling for `<input type="search">`
-		&[type="search"] {
+		&[ type='search' ] {
 			// Support: Safari/iOS `none` needed, Chrome would accept `textfield` as well.
 			-webkit-appearance: none;
 			// Support: Firefox.
@@ -226,12 +231,14 @@ export default Vue.extend( {
 		box-sizing: border-box;
 		line-height: 18px;
 	}
+
 	input.mw-ui-input__input {
 		height: 32px;
 	}
+
 	.mw-ui-input__suggestion {
-		outline: none;
-		border: none;
+		outline: 0;
+		border: 0;
 		padding: 6px 8px;
 		font-family: inherit;
 		font-size: inherit;

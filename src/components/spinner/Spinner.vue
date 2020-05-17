@@ -6,7 +6,7 @@
 </template>
 
 <style lang="less">
-@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
+@import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
 
 @width-bounce-dot: 1em;
 
@@ -18,7 +18,7 @@
 	.mw-ui-spinner__bounce,
 	&:before,
 	&:after {
-		content: "";
+		content: '';
 		background-color: @colorGray7;
 		display: inline-block;
 		width: @width-bounce-dot;
@@ -47,13 +47,13 @@
 	0%,
 	50%, /* Equals 800ms. */
 	100% {
-		-webkit-transform: scale(0.625);
+		-webkit-transform: scale( 0.625 );
 	}
 
 	20% {
 		// Equals 320ms.
 		opacity: 0.87;
-		-webkit-transform: scale(1);
+		-webkit-transform: scale( 1 );
 	}
 }
 
@@ -61,12 +61,12 @@
 	0%,
 	100%,
 	80% {
-		transform: scale(0.625);
+		transform: scale( 0.625 );
 	}
 
 	20% {
 		opacity: 0.87;
-		transform: scale(1);
+		transform: scale( 1 );
 	}
 }
 </style>
