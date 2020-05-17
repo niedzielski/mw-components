@@ -10,6 +10,8 @@ Vue.js user interface components for MediaWiki's Vector skin.
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html)
 	- Primitives: [min](https://mw-components.netlify.app/sourceMaps/primitivesMin.html) /
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/primitivesMinGzip.html)
+	- Search: [min](https://mw-components.netlify.app/sourceMaps/searchMin.html) /
+	  [min+gzip](https://mw-components.netlify.app/sourceMaps/searchMinGzip.html)
 - [Minified and gzipped bundle size report](https://mw-components.netlify.app/minGzipBundleSize.txt)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93062612-dc3e-4945-a30d-0672b22c5e42/deploy-status)](https://app.netlify.com/sites/mw-components/deploys)
@@ -79,6 +81,7 @@ The following chunks are available:
 - mwc.js/css: the complete library and default export.
 - mwc-primitives.js/css: MwButton, MwInput, and other primitives needed to build any user
 	interface.
+- mwc-search.js/css: An optimized bundle for MwTypeaheadSearchAutocomplete.
 - mediawiki.ui.button.js/css: MediaWiki styles. Use these in non-MediaWiki contexts only.
 
 Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require an Vue.js

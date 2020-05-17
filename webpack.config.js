@@ -13,7 +13,8 @@ const webpack = require( 'webpack' );
 // readme.md#different-builds for details.
 const Chunk = {
 	Mwc: 'mwc',
-	Primitives: 'mwc-primitives'
+	Primitives: 'mwc-primitives',
+	Search: 'mwc-search'
 };
 
 // The extension used for source map files. Per T173491, files with a .map extension cannot be
@@ -95,7 +96,8 @@ module.exports = ( _env, argv ) => ( {
 	// Map of chunk names to entry files.
 	entry: {
 		[ Chunk.Mwc ]: './src/entries/mwc.ts',
-		[ Chunk.Primitives ]: './src/entries/mwc-primitives.ts'
+		[ Chunk.Primitives ]: './src/entries/mwc-primitives.ts',
+		[ Chunk.Search ]: './src/entries/mwc-search.ts'
 		// Other chunks are configured under optimization.
 	},
 

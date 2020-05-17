@@ -6,6 +6,7 @@ import MwIcon from '@/components/icon/Icon.vue';
 import MwInput from '@/components/input/Input.vue';
 import MwSpinner from '@/components/spinner/Spinner.vue';
 import MwThumbnail from '@/components/thumbnail/Thumbnail.vue';
+import MwTypeaheadInput from '@/components/typeahead-input/TypeaheadInput.vue';
 
 export default {
 	version: VERSION,
@@ -16,5 +17,6 @@ export default {
 	MwIcon,
 	MwInput,
 	MwSpinner,
-	MwThumbnail
+	MwThumbnail,
+	MwTypeaheadInput
 };
