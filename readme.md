@@ -47,9 +47,11 @@ import mwc from '@wikimedia/mw-components';
 
 The following chunks are available:
 
-- index.js: the complete library and default export.
+- mwc.js/css: the complete library and default export.
+- mwc-primitives.js/css: MwButton, MwInput, and other primitives needed to build any user interface.
 
-Each entry is side-effect free.
+Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require an Vue.js
+runtime.
 
 ### Version history
 
@@ -119,6 +121,7 @@ $ npm version minor
 
 ## Design goals
 
+- Modern developer workflow and user experiences.
 - Fully typed. Accurate typing improves comprehension for tooling and programmers.
 - Performant and intelligently divided with minimal required dependencies.
 - Well tested and robust.

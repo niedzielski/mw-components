@@ -1,5 +1,5 @@
 # Lint the compiled outputs to validate ES5 but not the generated declaration files.
-/dist/*.d.ts
+/dist/src/
 
 # These JSON files must be manually linted to allow comments which are more valuable than
 # presentation. eslint-plugin-json errors on overrides and file disables are unsupported:

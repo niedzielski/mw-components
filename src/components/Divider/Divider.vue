@@ -2,11 +2,14 @@
 	<div class="mw-ui-divider row" />
 </template>
 
-<style lang="less">
-@import "../variables/colors.less";
+<style lang="css">
+/* [todo] use lang="less". */
+/* [todo] uncomment. */
+/* @import "../variables/colors.less"; */
 
 .mw-ui-divider {
-	border: 1px solid @colorGray12;
+	/* [todo] uncomment. */
+	/* border: 1px solid @colorGray12; */
 	margin: 0 !important;
 	padding: 0 !important;
 }

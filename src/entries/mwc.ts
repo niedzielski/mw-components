@@ -1,3 +1,3 @@
-import mwcBase from './mwc-base';
+import mwcPrimitives from './mwc-primitives';
 
-export default { ...mwcBase };
+export default { ...mwcPrimitives };
