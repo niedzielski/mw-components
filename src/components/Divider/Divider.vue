@@ -1,5 +1,5 @@
 <template functional>
-	<div class="mw-ui-divider row"></div>
+	<div class="mw-ui-divider row" />
 </template>
 
 <style lang="less">

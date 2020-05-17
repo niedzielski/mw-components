@@ -78,6 +78,7 @@ these scripts.
 - `run build`: compile source inputs to bundle outputs under `dist/`.
 - `test` / `t`: build the project and execute all tests. Anything that can be validated by
 	automation before publishing runs through this command.
+- `run format`: apply lint fixes automatically where available.
 - `run docs`: generate all documentation under `docs/`.
 - `version`: see [Versioning](#versioning).
 

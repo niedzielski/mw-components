@@ -1,5 +1,6 @@
 {
 	"files": [
-		{ "path": "./dist/index.js", "maxSize": "0.1 KB" }
+		{ "path": "./dist/mwc.js", "maxSize": "0.3 KB" },
+		{ "path": "./dist/mwc-base.js", "maxSize": "0.2 KB" }
 	]
 }

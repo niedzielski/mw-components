@@ -1,5 +1,5 @@
-import MwDivider from '@/components/Divider/Divider.vue'
+import MwDivider from '@/components/Divider/Divider.vue';
 
 export default {
 	MwDivider
-}
+};

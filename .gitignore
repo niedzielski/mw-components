@@ -1,4 +1,9 @@
 /node_modules/
-/dist/
+
+# Omit build products but version the ES5 linter configuration.
+/dist/*
+!/dist/.eslintrc.js
+
+/.eslintcache
 
 /docs/source-maps/
