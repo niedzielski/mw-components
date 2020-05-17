@@ -2,6 +2,8 @@
 
 Vue.js user interface components for MediaWiki's Vector skin.
 
+[View the components Storybook online](https://mw-components.netlify.app/ui).
+
 ## Table of contents
 
 <!--

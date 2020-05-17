@@ -11,7 +11,7 @@
     "Wikimedia",
     "TypeScript"
   ],
-  "homepage": "https://github.com/niedzielski/mw-components",
+  "homepage": "https://mw-components.netlify.app/ui",
   "repository": "github:niedzielski/mw-components",
   "bugs": "https://phabricator.wikimedia.org/tag/vue.js",
   "license": "MIT",
