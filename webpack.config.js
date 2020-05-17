@@ -80,9 +80,6 @@ module.exports = ( _env, argv ) => ( {
 		warnings: true
 	},
 
-	// Fail on the first build error instead of tolerating it.
-	bail: true,
-
 	resolve,
 
 	// Map of chunk names to entry files.
