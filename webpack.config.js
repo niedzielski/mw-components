@@ -38,10 +38,6 @@ module.exports = ( _env, argv ) => ( {
 		alias: { '@': path.resolve( __dirname, './src' ) }
 	},
 
-	// Specify that all paths are relative the Webpack configuration directory not the current
-	// working directory. If NPM is executed in a child folder, the references will be correct.
-	context: __dirname,
-
 	// Map of chunk names to entry files.
 	entry: {
 		[ Chunk.Mwc ]: './src/entries/mwc.ts',
