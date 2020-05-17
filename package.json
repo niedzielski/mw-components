@@ -16,7 +16,6 @@
   "bugs": "https://phabricator.wikimedia.org/tag/vue.js",
   "license": "MIT",
   "main": "dist/mwc.js",
-  "types": "dist/mwc.d.ts",
   "scripts": {
     "build": "webpack -p",
     "test": "npm -s run build && npm -s run test:size && npm -s run test:lint && npm -s run docs",

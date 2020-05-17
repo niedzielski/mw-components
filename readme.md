@@ -36,6 +36,7 @@ Vue.js user interface components for MediaWiki's Vector skin.
 - [Performance](#performance)
   - [Inspecting bundle contents](#inspecting-bundle-contents)
   - [Configuration](#configuration)
+- [Known issues](#known-issues)
 - [License (MIT)](#license-mit)
 
 <!-- /code_chunk_output -->
@@ -322,6 +323,15 @@ configuration is versioned in [bundlesize.config.json]:
 [JEDEC notation]: https://en.wikipedia.org/wiki/Template:Quantities_of_bytes    
 [only supports base-2 units]: https://github.com/visionmedia/bytes.js#bytesparsestringnumber-value-numbernull     
 [bundlesize.config.json]: bundlesize.config.json
+
+## Known issues
+
+- Type definitions are not emitted to dist/ in the current configuration. The consequence is that
+	external consumers will not get great typing. This may be worked around by disabling
+	[ForkTsCheckerWebpackPlugin] for production builds. As part of fixing this issue, the
+	package.json `types` field should be added.
+
+[ForkTsCheckerWebpackPlugin]: https://github.com/TypeStrong/fork-ts-checker-webpack-plugin/issues/49
 
 ## License (MIT)
 

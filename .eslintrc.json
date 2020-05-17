@@ -23,7 +23,9 @@
 			"files": [ "*.js" ],
 			"rules": {
 				// Imports are unsupported.
-				"@typescript-eslint/no-var-requires": "off"
+				"@typescript-eslint/no-var-requires": "off",
+				// This seems to be giving false positives.
+				"@typescript-eslint/explicit-function-return-type": "off"
 			}
 		},
 		{
