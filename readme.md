@@ -20,6 +20,11 @@ Vue.js user interface components for MediaWiki's Vector skin.
   - [Quick start](#quick-start)
   - [NPM scripts](#npm-scripts)
   - [Conventions](#conventions)
+    - [Terminology and naming](#terminology-and-naming)
+      - [Components](#components)
+      - [Padding and margins](#padding-and-margins)
+      - [Viewports](#viewports)
+      - [Et cetera](#et-cetera)
   - [Less styling](#less-styling)
     - [Less vs script imports](#less-vs-script-imports)
     - [MediaWiki legacy compatibility](#mediawiki-legacy-compatibility)
@@ -100,13 +105,43 @@ The remaining undocumented scripts are utilities and not expressly supported wor
 
 ### Conventions
 
-- The [Vue.js Style Guide] is adhered to where possible.
+The [Vue.js Style Guide] is adhered to where possible.
+
+[Vue.js Style Guide]: https://vuejs.org/v2/style-guide
+
+#### Terminology and naming
+
+##### Components
+
 - PascalCase multi-word component names are used per the Vue.js Style Guide. Since every component
 	is prefixed with `Mw`, all components are multi-word just by keeping that pattern. E.g.:
 	- ✓ Use `MwFoo` with a lowercase "w".
 	- ✗ Do _not_ use `MWFoo` with a capital "W". This breaks kebab-cased HTML in templates.
 
-[Vue.js Style Guide]: https://vuejs.org/v2/style-guide
+##### Padding and margins
+
+- ps: *p*adding *s*tart
+- ms: *m*argin *s*tart
+- pe: *p*adding *e*nd
+- me: *m*argin *e*nd
+- pt: *p*adding *t*op
+- mt: *m*argin *t*op
+- pb: *p*adding *b*ottom
+- mb: *m*argin *b*ottom
+- pa: *pa*dding
+- ma: *ma*rgin
+
+##### Viewports
+
+- xs: e*x*tra *s*mall
+- sm: *sm*all
+- md: *m*e*d*ium
+- lg: *l*ar*g*e
+- xl: e*x*tra *l*arge
+
+##### Et cetera
+
+- bidir: bidirectional
 
 ### Less styling
 

@@ -1,8 +1,8 @@
 {
 	"files": [
-		{ "path": "./dist/mwc.js", "maxSize": "2.2 KB" },
-		{ "path": "./dist/mwc.css", "maxSize": "1.8 KB" },
-		{ "path": "./dist/mwc-primitives.js", "maxSize": "2.2 KB" },
-		{ "path": "./dist/mwc-primitives.css", "maxSize": "1.8 KB" }
+		{ "path": "./dist/mwc.js", "maxSize": "2.5 KB" },
+		{ "path": "./dist/mwc.css", "maxSize": "2.3 KB" },
+		{ "path": "./dist/mwc-primitives.js", "maxSize": "2.5 KB" },
+		{ "path": "./dist/mwc-primitives.css", "maxSize": "2.3 KB" }
 	]
 }
