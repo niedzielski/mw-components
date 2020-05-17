@@ -12,6 +12,10 @@ const Chunk = {
 	Primitives: 'mwc-primitives'
 };
 
+// The extension used for source map files. Per T173491, files with a .map extension cannot be
+// served from prod. It doesn't seem to be practical to rename the CSS source maps.
+const jsSourceMapExtension = '.map.json';
+
 /**
  * @param {Parameters<webpack.ConfigurationFactory>[0]} _env
  * @param {Parameters<webpack.ConfigurationFactory>[1]} argv
@@ -48,7 +52,19 @@ module.exports = ( _env, argv ) => ( {
 	// Omit these external dependencies to be provided by the consumer.
 	externals: [ 'vue' ],
 
+	performance: {
+		// The default filter excludes map files but we rename ours. See T173491.
+		assetFilter: ( filename ) => !filename.endsWith( jsSourceMapExtension )
+	},
+
+	// Accurate source maps come at the expense of build time. The source map is intentionally
+	// exposed to users via sourceMapFilename for prod debugging. This goes against convention as
+	// this source code is publicly distributed.
+	devtool: argv.mode === 'production' ? 'source-map' : 'cheap-module-eval-source-map',
+
 	output: {
+		sourceMapFilename: `[file]${jsSourceMapExtension}`,
+
 		// Set the name to avoid possible Webpack runtime collisions of globals with other Webpack
 		// runtimes. See https://webpack.js.org/configuration/output/#outputuniquename.
 		library: 'mwc',
@@ -58,9 +74,6 @@ module.exports = ( _env, argv ) => ( {
 		// https://github.com/webpack/webpack/issues/6525
 		globalObject: 'this'
 	},
-
-	// Output source maps.
-	devtool: 'source-map',
 
 	module: {
 		rules: [
