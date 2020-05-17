@@ -45,7 +45,11 @@ function rules( mode ) {
 		// Concatenate and compile Less and CSS (embedded in SFCs or distinct files) to chunks.
 		{
 			test: /\.(c|le)ss$/,
-			use: [ MiniCssExtractPlugin.loader, 'css-loader', 'less-loader' ]
+			use: [
+				{ loader: MiniCssExtractPlugin.loader, options: { hmr: mode === 'development' } },
+				'css-loader',
+				'less-loader'
+			]
 		}
 	];
 }
