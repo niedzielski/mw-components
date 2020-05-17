@@ -2,7 +2,9 @@
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const ForkTsCheckerWebpackPlugin = require( 'fork-ts-checker-webpack-plugin' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const OptimizeCSSAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
 const path = require( 'path' );
+const TerserJSPlugin = require( 'terser-webpack-plugin' );
 const { VueLoaderPlugin } = require( 'vue-loader' );
 const webpack = require( 'webpack' );
 
@@ -105,6 +107,25 @@ module.exports = ( _env, argv ) => ( {
 	// exposed to users via sourceMapFilename for prod debugging. This goes against convention as
 	// this source code is publicly distributed.
 	devtool: argv.mode === 'production' ? 'source-map' : 'cheap-module-eval-source-map',
+
+	optimization: {
+		// Enable CSS minification. Unfortunately, this overrides the default JavaScript
+		// minification so it must be re-enabled with the TerserJSPlugin. The default processor is
+		// cssnano which uses postcss.
+		// https://github.com/webpack-contrib/mini-css-extract-plugin#minimizing-for-production
+		// https://github.com/NMFR/optimize-css-assets-webpack-plugin
+		// https://cssnano.co
+		minimizer: argv.mode === 'production' ? [
+			new TerserJSPlugin(),
+			new OptimizeCSSAssetsPlugin( {
+				cssProcessorOptions: {
+					// Keep sourceMappingURL comments in the output CSS.
+					// https://github.com/postcss/postcss/blob/master/docs/source-maps.md
+					map: { annotation: true }
+				}
+			} )
+		] : []
+	},
 
 	output: {
 		sourceMapFilename: `[file]${jsSourceMapExtension}`,
