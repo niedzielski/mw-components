@@ -58,8 +58,8 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
-@import "../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
+@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
+@import "../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
 
 .mw-ui-icon {
 	align-items: center;

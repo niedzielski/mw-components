@@ -6,7 +6,7 @@
 </template>
 
 <style lang="less">
-@import "../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
+@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
 
 @width-bounce-dot: 1em;
 

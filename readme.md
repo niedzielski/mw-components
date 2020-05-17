@@ -149,6 +149,12 @@ The [Vue.js Style Guide] is adhered to where possible.
 
 ### Less styling
 
+#### Layout and components
+
+Most of the component-specific Less is within the style sections of single file components
+themselves except for legacy and shared styles. Generic layout Less that may or may not be used by
+components is under styles/.
+
 #### Less vs script imports
 
 - Use Less imports for variable and mixin definitions required for Less to CSS compilation in single

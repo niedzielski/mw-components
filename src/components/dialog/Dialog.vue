@@ -39,7 +39,7 @@ import Vue, { PropType } from 'vue';
 import MwButton from '../button/Button.vue';
 import MwDivider from '../divider/Divider.vue';
 import { mwIconClose } from '../icon/icons';
-import '../styles/grid/grid.less';
+import '../../styles/grid/grid.less';
 
 export default Vue.extend( {
 	name: 'MwDialog',
@@ -95,8 +95,8 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
-@import "../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
+@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
+@import "../../styles/mediawiki/mediawiki.less/mediawiki.mixins.less";
 
 .mw-ui-dialog {
 	display: flex;

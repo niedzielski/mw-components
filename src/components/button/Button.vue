@@ -31,7 +31,7 @@
 <script lang="ts">
 import Vue, { PropType } from 'vue';
 import MwIcon from '../icon/Icon.vue';
-import '../styles/mediawiki/mediawiki.ui/components/buttons.less';
+import '../../styles/mediawiki/mediawiki.ui/components/buttons.less';
 
 export default Vue.extend( {
 	name: 'MwButton',
@@ -97,7 +97,7 @@ export default Vue.extend( {
 </script>
 
 <style lang="less">
-@import "../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
+@import "../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less";
 
 // Neutral button styling
 //
