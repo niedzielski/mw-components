@@ -119,7 +119,7 @@ module.exports = ( _env, argv ) => ( {
 		runtimeChunk: {
 			name( chunk ) {
 				// Extract the runtime for all chunks except the default Mwc.
-				return chunk.options.name === Chunk.Mwc ? Chunk.Mwc : Chunk.Common;
+				return chunk.name === Chunk.Mwc ? Chunk.Mwc : Chunk.Common;
 			}
 		},
 		// Enable CSS minification. Unfortunately, this overrides the default JavaScript

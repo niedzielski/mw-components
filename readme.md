@@ -86,8 +86,7 @@ The following chunks are available:
 	may change often.
 - **mwc-primitives**.js/css: MwButton, MwInput, and other primitives needed to build any user
 	interface. This chunk requires mwc-common.
-- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearchAutocomplete. This chunk requires
-	mwc-common.
+- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearch. This chunk requires mwc-common.
 - **mediawiki.ui.button**.js/css: MediaWiki styles. Use these in non-MediaWiki contexts only.
 
 Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require an Vue.js
