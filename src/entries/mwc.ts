@@ -1,3 +1,3 @@
-import mwcPrimitives from './mwc-primitives';
+import mwcPrimitives from '@/entries/mwc-primitives';
 
 export default { ...mwcPrimitives };
