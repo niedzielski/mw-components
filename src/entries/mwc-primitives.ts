@@ -8,6 +8,7 @@ import MwSpinner from '@/components/spinner/Spinner.vue';
 import MwThumbnail from '@/components/thumbnail/Thumbnail.vue';
 
 export default {
+	version: VERSION,
 	MwButton,
 	MwCard,
 	MwDialog,

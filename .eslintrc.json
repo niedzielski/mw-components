@@ -10,6 +10,8 @@
 	"rules": {
 		// Deprecated and interferes with JSDoc typing.
 		"valid-jsdoc": "off",
+		// Covered by TypeScript.
+		"no-undef": "off",
     // Adequately covered by tsconfig.json which allows unused variables with a leading underscore.
     "no-unused-vars": "off",
     // Programs read from top to bottom without var.

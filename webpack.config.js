@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const OptimizeCSSAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
 const path = require( 'path' );
 const TerserJSPlugin = require( 'terser-webpack-plugin' );
+const { version } = require( './package.json' );
 const { VueLoaderPlugin } = require( 'vue-loader' );
 const webpack = require( 'webpack' );
 
@@ -68,7 +69,10 @@ function plugins() {
 					// Suppress informational messages.
 				} }
 		} ),
-		new MiniCssExtractPlugin()
+		new MiniCssExtractPlugin(),
+		new webpack.DefinePlugin( {
+			VERSION: JSON.stringify( version )
+		} )
 	];
 }
 
