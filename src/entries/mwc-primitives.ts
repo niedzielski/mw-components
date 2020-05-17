@@ -4,6 +4,7 @@ import MwDivider from '@/components/divider/Divider.vue';
 import MwIcon from '@/components/icon/Icon.vue';
 import MwInput from '@/components/input/Input.vue';
 import MwSpinner from '@/components/spinner/Spinner.vue';
+import MwThumbnail from '@/components/thumbnail/Thumbnail.vue';
 
 export default {
 	MwButton,
@@ -11,5 +12,6 @@ export default {
 	MwDivider,
 	MwIcon,
 	MwInput,
-	MwSpinner
+	MwSpinner,
+	MwThumbnail
 };

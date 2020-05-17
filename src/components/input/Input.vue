@@ -270,7 +270,8 @@ export default Vue.extend( {
 		& + .mw-ui-input-large {
 			margin-top: -1px;
 		}
-		// When focusing, make the input relative to raise it above any attached inputs to unhide its borders
+		// When focusing, make the input relative to raise it above any attached inputs to unhide
+		// its borders.
 		&:focus {
 			position: relative;
 		}
