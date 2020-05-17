@@ -10,7 +10,9 @@ Vue.js user interface components for MediaWiki's Vector skin.
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html)
 	- Primitives: [min](https://mw-components.netlify.app/sourceMaps/primitivesMin.html) /
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/primitivesMinGzip.html)
-- [Minified and gzipped bundle size report](https://mw-components.netlify.app/docs/minGzipBundleSize.txt)
+- [Minified and gzipped bundle size report](https://mw-components.netlify.app/minGzipBundleSize.txt)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/93062612-dc3e-4945-a30d-0672b22c5e42/deploy-status)](https://app.netlify.com/sites/mw-components/deploys)
 
 Learn more about the [different builds](#different-builds) available below.
 

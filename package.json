@@ -25,7 +25,7 @@
     "test:lint": "npm -s run linter -- .",
     "format": "npm -s run linter -- --fix .",
     "linter": "eslint --cache --max-warnings 0 --report-unused-disable-directives --ext .js,.json,.ts,.vue",
-    "docs": "npm -s run docs:ui && npm -s run docs:sourceMap:mwcMin && npm -s run docs:sourceMap:mwcMinGzip && npm -s run docs:sourceMap:primitivesMin && npm -s run docs:sourceMap:primitivesMinGzip && npm -s run test:size > docs/minGzipBundleSize.txt",
+    "docs": "npm -s run docs:ui && npm -s run docs:sourceMap:mwcMin && npm -s run docs:sourceMap:mwcMinGzip && npm -s run docs:sourceMap:primitivesMin && npm -s run docs:sourceMap:primitivesMinGzip && npm -s run test:size|grep dist > docs/minGzipBundleSize.txt",
     "docs:ui": "build-storybook --quiet --loglevel warn -o docs/ui",
     "docs:sourceMap:mwcMin": "source-map-explorer                   --html docs/sourceMaps/mwcMin.html            dist/mwc.{js,css}",
     "docs:sourceMap:mwcMinGzip": "source-map-explorer        --gzip --html docs/sourceMaps/mwcMinGzip.html        dist/mwc.{js,css}",
