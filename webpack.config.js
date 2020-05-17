@@ -92,13 +92,10 @@ module.exports = ( _env, argv ) => ( {
 				use: 'ts-loader'
 			},
 
-			// Concatenate and compile CSS (embedded in SFCs or distinct files) to chunks.
+			// Concatenate and compile Less and CSS (embedded in SFCs or distinct files) to chunks.
 			{
-				test: /\.css$/,
-				use: [
-					MiniCssExtractPlugin.loader,
-					'css-loader'
-				]
+				test: /\.(c|le)ss$/,
+				use: [ MiniCssExtractPlugin.loader, 'css-loader', 'less-loader' ]
 			}
 		]
 	},
