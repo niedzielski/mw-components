@@ -9,3 +9,4 @@
 # Ignore generated documentation.
 /docs/ui/
 /docs/sourceMaps/
+/docs/minGzipBundleSize.txt

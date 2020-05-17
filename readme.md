@@ -10,6 +10,7 @@ View online:
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html)
 	- Primitives: [min](https://mw-components.netlify.app/sourceMaps/primitivesMin.html) /
 	  [min+gzip](https://mw-components.netlify.app/sourceMaps/primitivesMinGzip.html)
+- [Minified and gzipped bundle size report](https://mw-components.netlify.app/docs/minGzipBundleSize.txt)
 
 ## Table of contents
 
