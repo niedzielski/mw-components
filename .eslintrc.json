@@ -38,6 +38,7 @@
         // Treat attributes like object properties.
 				"vue/max-attributes-per-line": "off"
 			}
-		}
+		},
+		{ "files": [ "*.test.ts" ], "extends": [ "plugin:jest/recommended" ] }
 	]
 }

@@ -1,0 +1,9 @@
+{
+	"rootDir": "..",
+	"transform": {
+		".+\\.ts$": "ts-jest",
+		".+\\.vue$": "vue-jest",
+		"^.+\\.(c|le)ss$": "<rootDir>/.jest/ignoreTransform.js"
+	},
+	"snapshotResolver": "<rootDir>/.jest/colocatedSnapshotResolver.js"
+}
