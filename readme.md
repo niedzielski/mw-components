@@ -13,6 +13,8 @@ Vue.js user interface components for search.
 <!-- code_chunk_output -->
 
 - [Table of contents](#table-of-contents)
+- [Usage](#usage)
+  - [Different builds](#different-builds)
 - [Development](#development)
   - [Quick start](#quick-start)
   - [NPM scripts](#npm-scripts)
@@ -23,6 +25,28 @@ Vue.js user interface components for search.
 - [License (MIT)](#license-mit)
 
 <!-- /code_chunk_output -->
+
+## Usage
+
+Install the package:
+
+```bash
+npm i -D @wikimedia/mw-components
+```
+
+Import the appropriate build:
+
+```js
+import mwc from '@wikimedia/mw-components';
+```
+
+### Different builds
+
+The following chunks are available:
+
+- index.js: the complete library and default export.
+
+Each entry is side-effect free.
 
 ## Development
 
