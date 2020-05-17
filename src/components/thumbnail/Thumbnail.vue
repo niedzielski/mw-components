@@ -17,7 +17,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import MwIcon from '../MwIcon/MwIcon.vue';
+import MwIcon from '../icon/Icon.vue';
 import { mwIconImageLayoutFrameless } from '../icon/icons';
 
 export default Vue.extend( {

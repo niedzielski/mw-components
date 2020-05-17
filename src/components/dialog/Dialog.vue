@@ -36,8 +36,8 @@
 
 <script lang="ts">
 import Vue, { PropType } from 'vue';
-import MwButton from '../MwButton/MwButton.vue';
-import MwDivider from '../MwDivider/MwDivider.vue';
+import MwButton from '../button/Button.vue';
+import MwDivider from '../divider/Divider.vue';
 import { mwIconClose } from '../icon/icons';
 import '../styles/grid/grid.less';
 
