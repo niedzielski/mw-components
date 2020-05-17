@@ -26,6 +26,7 @@ Vue.js user interface components for MediaWiki's Vector skin.
       - [Viewports](#viewports)
       - [Et cetera](#et-cetera)
   - [Less styling](#less-styling)
+    - [Layout and components](#layout-and-components)
     - [Less vs script imports](#less-vs-script-imports)
     - [MediaWiki legacy compatibility](#mediawiki-legacy-compatibility)
       - [ResourceLoader module mapping and chunks](#resourceloader-module-mapping-and-chunks)
@@ -355,6 +356,8 @@ configuration is versioned in [bundlesize.config.json]:
 	external consumers will not get great typing. This may be worked around by disabling
 	[ForkTsCheckerWebpackPlugin] for production builds. As part of fixing this issue, the
 	package.json `types` field should be added.
+- If Storybook encounters an error when booting, it does not launch even after the error is
+	resolved.
 
 [ForkTsCheckerWebpackPlugin]: https://github.com/TypeStrong/fork-ts-checker-webpack-plugin/issues/49
 
