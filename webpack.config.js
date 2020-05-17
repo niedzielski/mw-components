@@ -10,12 +10,14 @@ const { VueLoaderPlugin } = require( 'vue-loader' );
 const webpack = require( 'webpack' );
 
 // Enum of chunk names. The key is a symbol. The value is the chunk name and file stem. See
-// readme.md#different-builds for details.
+// readme.md#different-builds for details. Some of these chunks have specific entry points under
+// src/entries and others are generated automatically.
 const Chunk = {
 	Mwc: 'mwc',
 	Common: 'mwc-common',
 	Primitives: 'mwc-primitives',
-	Search: 'mwc-search'
+	Search: 'mwc-search',
+	MediaWikiUiButton: 'mediawiki.ui.button'
 };
 
 // The extension used for source map files. Per T173491, files with a .map extension cannot be
@@ -137,12 +139,24 @@ module.exports = ( _env, argv ) => ( {
 					// always create chunks based on criteria specified for this cacheGroup.
 					enforce: true,
 					// Only consider splitting chunks off of these whitelisted entry names.
-					/** @param {webpack.compilation.Chunk} chunk */
 					// eslint-disable-next-line no-restricted-syntax
 					chunks: ( chunk ) => [
 						Chunk.Primitives,
 						Chunk.Search
 					].includes( chunk.name )
+				},
+				[ Chunk.MediaWikiUiButton ]: {
+					name: Chunk.MediaWikiUiButton,
+					minChunks: 1,
+					reuseExistingChunk: false,
+					enforce: true,
+					// eslint-disable-next-line no-restricted-syntax
+					chunks: ( chunk ) => [
+						Chunk.Primitives,
+						Chunk.Search
+					].includes( chunk.name ),
+					// test: ( module ) => testMediaWikiUiButton( module )
+					test: /[\\/]styles[\\/]mediawiki[\\/]/
 				}
 			}
 		},
