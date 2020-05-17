@@ -117,9 +117,33 @@ module.exports = ( _env, argv ) => ( {
 
 	optimization: {
 		runtimeChunk: {
+			/** @param {webpack.compilation.Chunk} chunk */
 			name( chunk ) {
 				// Extract the runtime for all chunks except the default Mwc.
 				return chunk.name === Chunk.Mwc ? Chunk.Mwc : Chunk.Common;
+			}
+		},
+		splitChunks: {
+			cacheGroups: {
+				[ Chunk.Common ]: {
+					name: Chunk.Common,
+					// Minimum number of chunks module must share before excising into common chunk.
+					minChunks: 2,
+					// Don't reuse existing chunks when splitting (i.e. we do not want Webpack
+					// excising modules into an async chunk.
+					// https://github.com/webpack/webpack.js.org/issues/2122#issuecomment-388609306
+					reuseExistingChunk: false,
+					// Ignore Webpack's default minSize option (and other splitChunks defaults) and
+					// always create chunks based on criteria specified for this cacheGroup.
+					enforce: true,
+					// Only consider splitting chunks off of these whitelisted entry names.
+					/** @param {webpack.compilation.Chunk} chunk */
+					// eslint-disable-next-line no-restricted-syntax
+					chunks: ( chunk ) => [
+						Chunk.Primitives,
+						Chunk.Search
+					].includes( chunk.name )
+				}
 			}
 		},
 		// Enable CSS minification. Unfortunately, this overrides the default JavaScript

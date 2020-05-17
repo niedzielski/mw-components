@@ -78,18 +78,31 @@ import mwc from '@wikimedia/mw-components';
 
 ### Different builds
 
-The following chunks are available:
+There are two types of chunks available:
 
-- **mwc**.js/css: the complete library and default export. No other chunks required.
-- **mwc-common**.js/css: common denominator chunk for all other chunks except mwc. Code that can
-	be shared is coalesced herein. This chunk includes the Webpack runtime or bootloader. This chunk
-	may change often.
-- **mwc-primitives**.js/css: MwButton, MwInput, and other primitives needed to build any user
-	interface. This chunk requires mwc-common.
-- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearch. This chunk requires mwc-common.
-- **mediawiki.ui.button**.js/css: MediaWiki styles. Use these in non-MediaWiki contexts only.
+- **Combined**: the complete library. This bundle is the simplest to use because it contains all
+	code but is not performant if only part is used or if different parts should be loaded at
+	different times.
+	
+	⚠️ This chunk is standalone and should not be loaded with split chunks.
 
-Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require an Vue.js
+	- **mwc**.js/css: the complete library and default export. No other chunks required.
+
+- **Split**: partial libraries. More sophisticated to use but also more performant and allows
+	different loading strategies to be applied.
+	
+	⚠️ These partial libraries all depend on the mwc-common chunk and should not be loaded in
+	conjunction with the combined mwc chunk.
+
+	- **mwc-common**.js/css: common denominator chunk for all other split chunks. Code that can be
+		shared is coalesced herein. This chunk includes the Webpack runtime or bootloader. This chunk
+		may change often.
+	- **mwc-primitives**.js/css: MwButton, MwInput, and other primitives needed to build any user
+		interface. This chunk requires mwc-common.
+	- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearch. This chunk requires mwc-common.
+	- **mediawiki.ui.button**.js/css: MediaWiki styles. Use these in non-MediaWiki contexts only.
+
+Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require a Vue.js
 runtime.
 
 ### Version history
