@@ -4,7 +4,7 @@ import MwButton from './Button.vue';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import * as icons from '../icon/icons';
 export default {
-	title: 'Components/MwButton',
+	title: 'Components/Button',
 	component: MwButton,
 	parameters: { layout: 'centered' }
 };
