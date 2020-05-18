@@ -4,6 +4,7 @@ import MwDialog from '@/components/dialog/Dialog.vue';
 import MwDivider from '@/components/divider/Divider.vue';
 import MwIcon from '@/components/icon/Icon.vue';
 import MwInput from '@/components/input/Input.vue';
+import MwListItem from '@/components/list-item/ListItem.vue';
 import MwSpinner from '@/components/spinner/Spinner.vue';
 import MwThumbnail from '@/components/thumbnail/Thumbnail.vue';
 import MwTypeaheadInput from '@/components/typeahead-input/TypeaheadInput.vue';
@@ -17,6 +18,7 @@ export default {
 	MwDivider,
 	MwIcon,
 	MwInput,
+	MwListItem,
 	MwSpinner,
 	MwThumbnail,
 	MwTypeaheadInput
