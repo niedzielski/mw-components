@@ -3,9 +3,7 @@ import MwCard from './Card.vue';
 
 describe( 'Card', () => {
 	test( 'renders correctly', () => {
-		const title = 'Card title';
-		const wrapper = shallowMount( MwCard, { propsData: { title } } );
-		expect( wrapper.get( '.mw-ui-card__title' ).text() ).toMatch( title );
+		const wrapper = shallowMount( MwCard );
 		expect( wrapper.element ).toMatchSnapshot();
 	} );
 } );

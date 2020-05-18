@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { text } from '@storybook/addon-knobs';
+import { number } from '@storybook/addon-knobs';
 import MwCard from './Card.vue';
 import MwIcon from '../icon/Icon.vue';
 import { mwIconWikipediaLogo } from '../icon/icons';
@@ -13,16 +13,16 @@ export default {
 export const Card = (): Vue.Component => Vue.extend( {
 	components: { MwCard, MwIcon },
 	props: {
-		title: {
-			default: text( 'Card title', 'Title' )
+		size: {
+			default: number( 'Icon size', 256 )
 		}
 	},
 	data() {
 		return { mwIconWikipediaLogo };
 	},
 	template: `
-		<mw-card :title="title">
-			<mw-icon title="Wikipedia" :icon="mwIconWikipediaLogo" size="256" />
+		<mw-card>
+			<mw-icon :icon="mwIconWikipediaLogo" :size="size" />
 		</mw-card>
 	`
 } );

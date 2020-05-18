@@ -1,9 +1,6 @@
 <template>
-	<div :id="id" class="mw-ui-card">
-		<div class="mw-ui-card__title title" v-text="title" />
-		<div class="mw-ui-card__content">
-			<slot />
-		</div>
+	<div class="mw-ui-card">
+		<slot />
 	</div>
 </template>
 
@@ -11,14 +8,7 @@
 import Vue from 'vue';
 
 export default Vue.extend( {
-	name: 'MwCard',
-	props: {
-		id: {
-			type: String,
-			default: null
-		},
-		title: { type: String, default: '' }
-	}
+	name: 'MwCard'
 } );
 </script>
 
@@ -33,10 +23,5 @@ export default Vue.extend( {
 	border-radius: @border-radius-base;
 	padding: 8px;
 	.box-shadow(0 1px 1px rgba(0, 0, 0, 0.15));
-
-	.mw-ui-card__title {
-		height: 2em;
-		color: @colorGray5;
-	}
 }
 </style>
