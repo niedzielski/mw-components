@@ -402,6 +402,7 @@ configuration is versioned in [bundlesize.config.json]:
 
 ## Known issues
 
+- The less-loader is reporting four warnings for entry chunk order.
 - jQuery is not yet linted for.
 - Type definitions are not emitted to dist/ in the current configuration. The consequence is that
 	external consumers will not get great typing. This may be worked around by disabling
