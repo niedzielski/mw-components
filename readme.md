@@ -94,8 +94,8 @@ There are two types of chunks available:
 - **Split**: partial libraries. More sophisticated to use but also more performant and allows
 	different loading strategies to be applied.
 	
-	⚠️ These partial libraries all depend on the mwc-common chunk and should not be loaded in
-	conjunction with the combined mwc chunk.
+	⚠️ These partial libraries all require the mwc-common and mediawiki.ui.button (or equivalent)
+	chunks to be loaded and should not be loaded in conjunction with the combined mwc chunk.
 
 	- **mwc-common**.js/css: common denominator chunk for all other split chunks. Code that can be
 		shared is coalesced herein. This chunk includes the Webpack runtime or bootloader. This chunk
@@ -284,8 +284,7 @@ compromise for all design goals.
 
 [Storybook is incompatible with Vue.js devtools]. There are at least a couple workarounds:
 
-- In Firefox, open the story you wish to inspect. Right-click anywhere in the story and select
-	`This Frame -> Open Frame in New Tab`. devtools should now work correctly in the new tab.
+- Tap "Open canvas in a new tab". devtools should now work correctly in the new tab.
 - Launch the standalone Vue.js devtools app via `npx -p @vue/devtools vue-devtools` and add
 	`<script src="//localhost:8098"></script>` to .storybook/preview-head.html. Now run Storybook
 	`npm -s start` and devtools should connect.
@@ -403,6 +402,7 @@ configuration is versioned in [bundlesize.config.json]:
 
 ## Known issues
 
+- jQuery is not yet linted for.
 - Type definitions are not emitted to dist/ in the current configuration. The consequence is that
 	external consumers will not get great typing. This may be worked around by disabling
 	[ForkTsCheckerWebpackPlugin] for production builds. As part of fixing this issue, the

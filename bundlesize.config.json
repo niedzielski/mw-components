@@ -1,11 +1,12 @@
 {
 	"files": [
-		{ "path": "./dist/mwc.js", "maxSize": "3.6 KB" },
-		{ "path": "./dist/mwc.css", "maxSize": "12.5 KB" },
-		{ "path": "./dist/mwc-common.js", "maxSize": "1.1 KB" },
-		{ "path": "./dist/mwc-primitives.js", "maxSize": "2.9 KB" },
-		{ "path": "./dist/mwc-primitives.css", "maxSize": "12.1 KB" },
-		{ "path": "./dist/mwc-search.js", "maxSize": "0.5 KB" },
+		{ "path": "./dist/mwc.js", "maxSize": "5.1 KB" },
+		{ "path": "./dist/mwc.css", "maxSize": "12.6 KB" },
+		{ "path": "./dist/mwc-common.js", "maxSize": "3.8 KB" },
+		{ "path": "./dist/mwc-common.css", "maxSize": "1.5 KB" },
+		{ "path": "./dist/mwc-primitives.js", "maxSize": "1.2 KB" },
+		{ "path": "./dist/mwc-primitives.css", "maxSize": "10.9 KB" },
+		{ "path": "./dist/mwc-search.js", "maxSize": "1.5 KB" },
 		{ "path": "./dist/mwc-search.css", "maxSize": "0.1 KB" },
 		{ "path": "./dist/mediawiki.ui.button.js", "maxSize": "0.2 KB" },
 		{ "path": "./dist/mediawiki.ui.button.css", "maxSize": "0.8 KB" }

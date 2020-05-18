@@ -143,7 +143,8 @@ module.exports = ( _env, argv ) => ( {
 					chunks: ( chunk ) => [
 						Chunk.Primitives,
 						Chunk.Search
-					].includes( chunk.name )
+					].includes( chunk.name ),
+					test: ( module ) => !testMediaWikiUiButton( module )
 				},
 				[ Chunk.MediaWikiUiButton ]: {
 					name: Chunk.MediaWikiUiButton,
@@ -155,8 +156,7 @@ module.exports = ( _env, argv ) => ( {
 						Chunk.Primitives,
 						Chunk.Search
 					].includes( chunk.name ),
-					// test: ( module ) => testMediaWikiUiButton( module )
-					test: /[\\/]styles[\\/]mediawiki[\\/]/
+					test: ( module ) => testMediaWikiUiButton( module )
 				}
 			}
 		},
@@ -212,3 +212,12 @@ module.exports = ( _env, argv ) => ( {
 } );
 
 module.exports.commonConfig = { resolve, rules, plugins };
+
+/**
+ * @param {webpack.compilation.Module} module
+ * @return {boolean}
+ */
+function testMediaWikiUiButton( module ) {
+	return module.constructor.name === 'CssModule' &&
+		/[\\/]styles[\\/]mediawiki[\\/]/.test( module.context || '' );
+}
