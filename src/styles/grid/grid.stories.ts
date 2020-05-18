@@ -62,7 +62,11 @@ export const ColumnSpacingAndAlignment = (): Vue.Component => Vue.extend( {
 	},
 	template: `
 		<div class="container storybook-grid spacing-demo">
-			<p>The columns can be distributed in a row using different spacing options "start", "center", "end", "around" or "between". Try changing this using <strong>Knobs</strong>. Similary the columns can be aligned with in the row space.</p>
+			<p>
+				The columns can be distributed in a row using different spacing options "start",
+				"center", "end", "around" or "between". Try changing this using
+				<strong>Knobs</strong>. Similary the columns can be aligned with in the row space.
+			</p>
 			<div class="row" :class="rowclasses">
 				<div class="col-2">col-2</div>
 				<div class="col-2">col-2</div>
@@ -77,7 +81,11 @@ export const Responsiveness = (): Vue.Component => Vue.extend( {
 	template: `
 		<div class="container storybook-grid responsiveness-demo">
 			<h2>Breakpoints</h2>
-			<p>The grid contains 5 types of media breakpoints that are used for targeting specific screen sizes or orientations, xs, sm, md, lg and xl. These resolutions are defined in table below:</p>
+			<p>
+				The grid contains 5 types of media breakpoints that are used for targeting specific
+				screen sizes or orientations, xs, sm, md, lg and xl. These resolutions are defined
+				in table below:
+			</p>
 			<table>
 			 <tr>
 			 <th> code</th>
@@ -91,19 +99,33 @@ export const Responsiveness = (): Vue.Component => Vue.extend( {
 			<tr><td>xl</td><td>extra large: 4k and ultra-wides</td><td>1904px and above</td></tr>
 			</table>
 			<h2>Responsive column widths</h2>
-			<p>Please use the viewport configuration in the storybook UI to see how the columns are responsing to viewport changes:</p>
+			<p>
+				Please use the viewport configuration in the storybook UI to see how the columns are
+				responding to viewport changes:
+			</p>
 			<div class="row">
 				<div class="col-xs-12 col-md-6 col-lg-3">col-xs-12 col-md-6 col-lg-3</div>
 			</div>
-			<p>The above row will have column with 3 units in lg and above breakpoints. It will have 12 column units in xs and above till xs breakpoints. In sm breakpoint and above till lg, it will have 6 column units </p>
+			<p>
+				The above row will have column with 3 units in lg and above breakpoints. It will
+				have 12 column units in xs and above till xs breakpoints. In sm breakpoint and
+				above till lg, it will have 6 column units.
+			</p>
 
-			<p>If breakpoints are not using in column class like col-6, it means the width is same in all breakpoints.</p>
+			<p>
+				If breakpoints are not using in column class like col-6, it means the width is same
+				in all breakpoints.
+			</p>
 			<h2>Hiding columns in a given breakpoint</h2>
 			<p>To hide a column in a given breakpoint use the class format col-hidden-breakpoint</p>
 			<div class="row">
 				<div class="col-xs-12 col-md-hidden col-lg-3">col-xs-12 col-md-hidden col-lg-3</div>
 			</div>
-			<p>The above row will have column with 3 units in lg and above breakpoints. It will have 12 column units in xs and above till xs breakpoints. In sm breakpoint and above till lg, the column will be hidden. </p>
+			<p>
+				The above row will have column with 3 units in lg and above breakpoints. It will
+				have 12 column units in xs and above till xs breakpoints. In sm breakpoint and
+				above till lg, the column will be hidden.
+			</p>
 		</div>
 	`
 } );

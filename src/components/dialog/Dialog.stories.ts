@@ -30,7 +30,12 @@ export const DismissableInformationDialog = (): Vue.Component => Vue.extend( {
 	template: `
 		<div class="container">
 			<mw-button label="Launch" @click="openDialog()" />
-			<mw-dialog v-show="showDialog" @close="onDialogClose()" :fullscreen="fullscreen" :title="title">
+			<mw-dialog
+				v-show="showDialog"
+				@close="onDialogClose()"
+				:fullscreen="fullscreen"
+				:title="title"
+			>
 				{{bodyText}}
 			</mw-dialog>
 		</div>
@@ -63,7 +68,12 @@ export const DialogWithButtonsInFooter = (): Vue.Component => Vue.extend( {
 	template: `
 	<div class="container">
 		<mw-button label="Launch" @click="openDialog()"></mw-button>
-		<mw-dialog v-show="showDialog" @close="onDialogClose()" :fullscreen="fullscreen" :title="title">
+		<mw-dialog
+			v-show="showDialog"
+			@close="onDialogClose()"
+			:fullscreen="fullscreen"
+			:title="title"
+		>
 			<template v-slot:header-icon><img :src="bodyImage"/></template>
 			<template v-slot:footer>
 			<div class="row justify-end">
@@ -140,8 +150,13 @@ export const DialogInteractionWithEscapeKey = (): Vue.Component => Vue.extend( {
 	template: `
 		<div class="container">
 			<mw-button label="Launch" @click="openDialog()" />
-			<mw-dialog :fullscreen="fullscreen" :closeOnEscapeKey="closeOnEscapeKey" v-show="showDialog" @close="onDialogClose()">
-					<template v-slot:default>{{ bodyText }}</template>
+			<mw-dialog
+				:fullscreen="fullscreen"
+				:closeOnEscapeKey="closeOnEscapeKey"
+				v-show="showDialog"
+				@close="onDialogClose()"
+			>
+				<template v-slot:default>{{ bodyText }}</template>
 			</mw-dialog>
 		</div>
 	`,
@@ -222,8 +237,13 @@ export const Animations = (): Vue.Component => Vue.extend( {
 	template: `
 		<div class="container">
 			<mw-button label="Launch" @click="openDialog()" />
-			<mw-dialog :fullscreen="fullscreen" v-show="showDialog" @close="onDialogClose()" :animation="animation">
-			<template v-slot:default><img :src="bodyImage"/></template>
+			<mw-dialog
+				:fullscreen="fullscreen"
+				v-show="showDialog"
+				@close="onDialogClose()"
+				:animation="animation"
+			>
+				<template v-slot:default><img :src="bodyImage"/></template>
 			</mw-dialog>
 		</div>
 	`,
