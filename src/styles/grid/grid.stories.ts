@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import { select } from '@storybook/addon-knobs';
-import './grid.less';
 import './gridStory.less';
 
 export default {

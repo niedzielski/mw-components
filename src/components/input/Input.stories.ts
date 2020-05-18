@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions';
 import { boolean, select, text } from '@storybook/addon-knobs';
 import MwInput from './Input.vue';
 import * as icons from '../icon/icons';
-import '../../styles/grid/grid.less';
 
 export default {
 	title: 'Components/Input',

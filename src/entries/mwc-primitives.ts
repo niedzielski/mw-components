@@ -7,6 +7,7 @@ import MwInput from '@/components/input/Input.vue';
 import MwSpinner from '@/components/spinner/Spinner.vue';
 import MwThumbnail from '@/components/thumbnail/Thumbnail.vue';
 import MwTypeaheadInput from '@/components/typeahead-input/TypeaheadInput.vue';
+import '../styles/grid/grid.less';
 
 export default {
 	version: VERSION,

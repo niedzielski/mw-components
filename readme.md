@@ -218,6 +218,7 @@ components is under styles/.
 	// …
 	</script>
 	```
+	These are usually added to the entry point chunks and .storybook/preview-head.html.
 
 #### MediaWiki legacy compatibility
 

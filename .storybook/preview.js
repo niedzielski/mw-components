@@ -1,6 +1,7 @@
 import { addParameters } from '@storybook/vue';
+import '../src/styles/grid/grid.less';
 
-// See components/styles/grid.less.
+// See src/styles/grid.less.
 const viewports = {
 	xs: {
 		name: 'Extra small (xs) phone',
