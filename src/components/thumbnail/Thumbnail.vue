@@ -1,18 +1,19 @@
 <template>
-	<img
-		v-if="thumbnail"
-		class="mw-ui-thumbnail"
-		loading="lazy"
-		:width="thumbnail.width"
-		:height="thumbnail.height"
-		:src="thumbnail.url"
-	>
-	<mw-icon
-		v-else
-		class="mw-ui-thumbnail mw-ui-thumbnail--missing justify-center"
-		:icon="mwIconImageLayoutFrameless"
-		:size="48"
-	/>
+	<div class="mw-ui-thumbnail">
+		<img
+			v-if="thumbnail"
+			loading="lazy"
+			:width="thumbnail.width"
+			:height="thumbnail.height"
+			:src="thumbnail.url"
+		>
+		<mw-icon
+			v-else
+			class="mw-ui-thumbnail mw-ui-thumbnail--missing justify-center"
+			:icon="mwIconImageLayoutFrameless"
+			:size="48"
+		/>
+	</div>
 </template>
 
 <script lang="ts">
@@ -42,11 +43,18 @@ export default Vue.extend( {
 @import '../../styles/mediawiki/mediawiki.less/mediawiki.ui/variables.less';
 
 .mw-ui-thumbnail {
-	display: flex;
 	align-items: center;
+	width: auto;
+	display: inline-block;
+
+	& img {
+		width: 100%;
+		height: auto;
+	}
 
 	&.mw-ui-thumbnail--missing {
 		background-color: @colorGray15;
 	}
 }
+
 </style>
