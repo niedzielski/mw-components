@@ -37,8 +37,8 @@
     "docs:sourceMap:primitivesMinGzip": "source-map-explorer        --gzip --html docs/sourceMaps/primitivesMinGzip.html        dist/mwc-primitives.{js,css}",
     "docs:sourceMap:searchMin": "source-map-explorer                       --html docs/sourceMaps/searchMin.html                dist/mwc-search.{js,css}",
     "docs:sourceMap:searchMinGzip": "source-map-explorer            --gzip --html docs/sourceMaps/searchMinGzip.html            dist/mwc-search.{js,css}",
-    "docs:sourceMap:mediaWikiUiButtonMin": "source-map-explorer            --html docs/sourceMaps/mediaWikiUiButtonMin.html     dist/mediawiki.ui.button.{js,css}",
-    "docs:sourceMap:mediaWikiUiButtonMinGzip": "source-map-explorer --gzip --html docs/sourceMaps/mediaWikiUiButtonMinGzip.html dist/mediawiki.ui.button.{js,css}",
+    "docs:sourceMap:mediaWikiUiButtonMin": "source-map-explorer            --html docs/sourceMaps/mediaWikiUiButtonMin.html     dist/mediawiki.ui.button.css",
+    "docs:sourceMap:mediaWikiUiButtonMinGzip": "source-map-explorer --gzip --html docs/sourceMaps/mediaWikiUiButtonMinGzip.html dist/mediawiki.ui.button.css",
     "preversion": "[ -z \"$(git status -z)\" ]",
     "postversion": "git push --follow-tags origin HEAD && npm publish",
     "prepublishOnly": "npm -s t"

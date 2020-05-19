@@ -8,7 +8,6 @@
 		{ "path": "./dist/mwc-primitives.css", "maxSize": "10.9 KB" },
 		{ "path": "./dist/mwc-search.js", "maxSize": "1.5 KB" },
 		{ "path": "./dist/mwc-search.css", "maxSize": "0.1 KB" },
-		{ "path": "./dist/mediawiki.ui.button.js", "maxSize": "0.2 KB" },
 		{ "path": "./dist/mediawiki.ui.button.css", "maxSize": "0.8 KB" }
 	]
 }

@@ -103,10 +103,13 @@ There are two types of chunks available:
 	- **mwc-primitives**.js/css: MwButton, MwInput, and other primitives needed to build any user
 		interface. This chunk requires mwc-common.
 	- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearch. This chunk requires mwc-common.
-	- **mediawiki.ui.button**.js/css: MediaWiki styles. Use these in non-MediaWiki contexts only.
+	- **mediawiki.ui.button**.js/css: MediaWiki styles for non-MediaWiki contexts only. The JavaScript
+	is an extraneous build product that may safely be ignored.<sup>[1](#extraneous-build-product)</sup>
 
 Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require a Vue.js
 runtime.
+
+<sup><a name="extraneous-build-product">1</a></sup> This issue will be [fixed in Webpack v5](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/85#issuecomment-582880948). See also these related tickets: [151](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/151), [518](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/518).
 
 ### Version history
 
