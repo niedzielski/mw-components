@@ -55,7 +55,7 @@ function rules( mode ) {
 			use: [
 				{ loader: MiniCssExtractPlugin.loader, options: { hmr: mode === 'development' } },
 				'css-loader',
-				'less-loader'
+				{ loader: 'less-loader', options: { sourceMap: mode === 'production' } }
 			]
 		}
 	];
