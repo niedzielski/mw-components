@@ -45,7 +45,6 @@ contribute.
   - [Versioning](#versioning)
 - [Design goals](#design-goals)
 - [Performance](#performance)
-  - [Inspecting bundle contents](#inspecting-bundle-contents)
   - [Configuration](#configuration)
 - [Known issues](#known-issues)
 - [License (MIT)](#license-mit)
@@ -102,8 +101,34 @@ There are two types of chunks available:
 	([min](https://mw-components.netlify.app/sourceMaps/mediaWikiUiButtonMin.html) /
 	[min+gz](https://mw-components.netlify.app/sourceMaps/mediaWikiUiButtonMinGzip.html))
 
-[Minified and gzipped bundle size report](https://mw-components.netlify.app/minGzipBundleSize.txt)
-for the above.
+For the above reports, note that the sizes reported in the drop down menu are gzipped compressed but
+regions are not. The uncompressed reports are useful for comparing chunks to each other. The
+gzipped reports are useful for seeing what bandwidth is ultimately consumed by. See the
+[minified and gzipped bundle size report](https://mw-components.netlify.app/minGzipBundleSize.txt)
+for alternative views or consider the gzip CLI:
+
+```bash
+# Individual chunk sizes (min / min+gz).
+ls -1 dist/*.{js,css}|
+sort|
+while IFS= read filename; do
+	printf \
+		'%s: %sB / %sB\n' \
+		"$filename" \
+		"$(wc -c < "$filename"|numfmt --to=iec-i)" \
+		"$(gzip -c "$filename"|wc -c|numfmt --to=iec-i)"
+done
+
+# All chunks concatenated (allows maximum possible compression). This makes sense if a request to
+# ResourceLoader will depend on multiple chunks.
+printf \
+	'%s: %sB / %sB\n' \
+	"Total" \
+	"$(cat dist/*.{js,css}|wc -c|numfmt --to=iec-i)" \
+	"$(cat dist/*.{js,css}|gzip -c|wc -c|numfmt --to=iec-i)"
+```
+
+See the [performance section](#performance) for related topics.
 
 Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require a Vue.js
 runtime. See [peerDependencies](package.json).
@@ -111,6 +136,8 @@ runtime. See [peerDependencies](package.json).
 [![Netlify Status](https://api.netlify.com/api/v1/badges/93062612-dc3e-4945-a30d-0672b22c5e42/deploy-status)](https://app.netlify.com/sites/mw-components/deploys)
 
 <sup><a name="extraneous-build-product">1</a></sup> This issue will be [fixed in Webpack v5](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/85#issuecomment-582880948). See also these related tickets: [151](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/151), [518](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/518).
+
+[docs/sourceMaps/]: docs/sourceMaps/
 
 ### Version history
 
@@ -357,30 +384,9 @@ For example, some CSS selectors are distant but have identical rules. This creat
 uncompressed CSS bundle when compiled. However, the compressed size may be negligible. Use the
 bundlesize tests to evaluate gzipped sizes before making optimizations that impede readability.
 
+See the [builds section](#different-builds) for related topics.
+
 [bundlesize]: https://github.com/siddharthkp/bundlesize
-[docs/sourceMaps/]: docs/sourceMaps/
-
-### Inspecting bundle contents
-
-See [docs/sourceMaps/]. For a second opinion, consider:
-
-```bash
-ls -1 dist/*.{js,css}|
-sort|
-while IFS= read filename; do
-	printf \
-		'%s: %sB / %sB\n' \
-		"$filename" \
-		"$(wc -c < "$filename"|numfmt --to=iec-i)" \
-		"$(gzip -c "$filename"|wc -c|numfmt --to=iec-i)"
-done
-printf \
-	'%s: %sB / %sB\n' \
-	"Total" \
-	"$(cat dist/*.{js,css}|wc -c|numfmt --to=iec-i)" \
-	"$(cat dist/*.{js,css}|gzip -c|wc -c|numfmt --to=iec-i)"
-```
-
 [docs/sourceMaps/]: docs/sourceMaps/
 
 ### Configuration
