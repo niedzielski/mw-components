@@ -1,9 +1,10 @@
 import { serializeSearchParams } from './fetch';
 
-type Test = [string, Readonly<Record<string, string|number|boolean>>, string];
+// [description, input, expected]
+type Case = [string, Record<string, string|number|boolean>, string];
 
 describe( 'serializeSearchParams()', () => {
-	const cases: Test[] = [
+	const cases: Case[] = [
 		[ 'empty object', {}, '' ],
 		[ 'single property object', { single: 'value' }, 'single=value' ],
 		[
@@ -14,6 +15,7 @@ describe( 'serializeSearchParams()', () => {
 	];
 	test.each( cases )(
 		'Case %# %s: (%p) => %p',
-		( _, obj, result ) => expect( serializeSearchParams( obj ) ).toStrictEqual( result )
+		( _, obj, result ) =>
+			expect( serializeSearchParams( obj ) ).toStrictEqual( result )
 	);
 } );
