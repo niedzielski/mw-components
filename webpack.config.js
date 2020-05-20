@@ -26,6 +26,7 @@ const jsSourceMapExtension = '.map.json';
 
 const resolve = {
 	extensions: [ '.js', '.ts' ],
+	// Map @/ to src/. These should match tsconfig.json.
 	alias: { '@': path.resolve( __dirname, './src' ) }
 };
 
