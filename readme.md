@@ -1,31 +1,18 @@
 # 🧩 @wikimedia/mw-components
 
-Discardable Vue.js user interface components prototype for MediaWiki's Vector skin.
+Discardable Vue.js user interface component library prototype for MediaWiki's Vector skin.
 
-**View the components online:**
+View the **[user interface component catalog online]** or see **[quick start](#quick-start)** to
+contribute.
 
-- [User interface catalog](https://mw-components.netlify.app/ui)
-- Chunk source map divisions:
-	- MWC: [min](https://mw-components.netlify.app/sourceMaps/mwcMin.html) /
-	  [min+gzip](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html)
-	- Common: [min](https://mw-components.netlify.app/sourceMaps/commonMin.html) /
-	  [min+gzip](https://mw-components.netlify.app/sourceMaps/commonMinGzip.html)
-	- Primitives: [min](https://mw-components.netlify.app/sourceMaps/primitivesMin.html) /
-	  [min+gzip](https://mw-components.netlify.app/sourceMaps/primitivesMinGzip.html)
-	- Search: [min](https://mw-components.netlify.app/sourceMaps/searchMin.html) /
-	  [min+gzip](https://mw-components.netlify.app/sourceMaps/searchMinGzip.html)
-- [Minified and gzipped bundle size report](https://mw-components.netlify.app/minGzipBundleSize.txt)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/93062612-dc3e-4945-a30d-0672b22c5e42/deploy-status)](https://app.netlify.com/sites/mw-components/deploys)
-
-Learn more about the [different builds](#different-builds) available below.
+[user interface component catalog online]: https://mw-components.netlify.app/ui
 
 ## Table of contents
 
 <!--
 	Markdown Preview Enhanced is used to automatically generate the table of contents. You don't
 	have to use it but please leave these directives for those who choose to. It helps keeps the
-	TOC in sync.
+	table of contents in sync.
 -->
 <!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
@@ -90,6 +77,8 @@ There are two types of chunks available:
 	⚠️ This chunk is standalone and should not be loaded with split chunks.
 
 	- **mwc**.js/css: the complete library and default export. No other chunks required.
+	([min](https://mw-components.netlify.app/sourceMaps/mwcMin.html) /
+	[min+gz](https://mw-components.netlify.app/sourceMaps/mwcMinGzip.html))
 
 - **Split**: partial libraries. More sophisticated to use but also more performant and allows
 	different loading strategies to be applied.
@@ -99,15 +88,27 @@ There are two types of chunks available:
 
 	- **mwc-common**.js/css: common denominator chunk for all other split chunks. Code that can be
 		shared is coalesced herein. This chunk includes the Webpack runtime or bootloader. This chunk
-		may change often.
+		may change often. ([min](https://mw-components.netlify.app/sourceMaps/commonMin.html) /
+		[min+gz](https://mw-components.netlify.app/sourceMaps/commonMinGzip.html))
 	- **mwc-primitives**.js/css: MwButton, MwInput, and other primitives needed to build any user
 		interface. This chunk requires mwc-common.
-	- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearch. This chunk requires mwc-common.
+		([min](https://mw-components.netlify.app/sourceMaps/primitivesMin.html) /
+		[min+gz](https://mw-components.netlify.app/sourceMaps/primitivesMinGzip.html))
+	- **mwc-search**.js/css: An optimized bundle for MwTypeaheadSearch. This chunk requires
+	mwc-common. ([min](https://mw-components.netlify.app/sourceMaps/searchMin.html) /
+	  [min+gz](https://mw-components.netlify.app/sourceMaps/searchMinGzip.html))
 	- **mediawiki.ui.button**.js/css: MediaWiki styles for non-MediaWiki contexts only. The JavaScript
 	is an extraneous build product that may safely be ignored.<sup>[1](#extraneous-build-product)</sup>
+	([min](https://mw-components.netlify.app/sourceMaps/mediaWikiUiButtonMin.html) /
+	[min+gz](https://mw-components.netlify.app/sourceMaps/mediaWikiUiButtonMinGzip.html))
+
+[Minified and gzipped bundle size report](https://mw-components.netlify.app/minGzipBundleSize.txt)
+for the above.
 
 Each chunk is side-effect free. All chunks are fully compiled ES5 / CSS and require a Vue.js
-runtime.
+runtime. See [peerDependencies](package.json).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/93062612-dc3e-4945-a30d-0672b22c5e42/deploy-status)](https://app.netlify.com/sites/mw-components/deploys)
 
 <sup><a name="extraneous-build-product">1</a></sup> This issue will be [fixed in Webpack v5](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/85#issuecomment-582880948). See also these related tickets: [151](https://github.com/webpack-contrib/mini-css-extract-plugin/issues/151), [518](https://github.com/webpack-contrib/extract-text-webpack-plugin/issues/518).
 
@@ -282,6 +283,9 @@ library a little clumsy in places, and all that hinders reusability but seems th
 compromise for all design goals.
 
 ### Storybook
+
+Storybook is the primary development workflow.
+[The catalog](https://mw-components.netlify.app/ui) is also available online.
 
 #### With Vue.js devtools
 
