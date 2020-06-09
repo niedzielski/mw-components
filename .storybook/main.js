@@ -1,10 +1,9 @@
 /* eslint-env node */
 
 const { commonConfig } = require( '../webpack.config.js' );
-const path = require( 'path' );
 
 module.exports = {
-	stories: [ path.resolve( __dirname, '../src/**/*.stories.ts' ) ],
+	stories: [ '../src/**/*.stories.ts' ],
 
 	addons: [
 		'@storybook/addon-knobs',
@@ -15,6 +14,9 @@ module.exports = {
 		'@storybook/addon-backgrounds',
 		'@storybook/addon-links'
 	],
+
+	// Only report warnings and errors in the browser console.
+	logLevel: 'warn',
 
 	/**
    * @arg {import('webpack').Configuration} config
