@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import { addParameters } from '@storybook/vue';
 import '../src/styles/grid/grid.less';
 
@@ -32,3 +33,10 @@ const backgrounds = [
 ];
 
 addParameters( { viewport: { viewports }, backgrounds } );
+
+// Disable informational message in the console log:
+//
+//   You are running Vue in development mode.
+//   Make sure to turn on production mode when deploying for production.
+//   See more tips at https://vuejs.org/guide/deployment.html
+Vue.config.productionTip = false;
